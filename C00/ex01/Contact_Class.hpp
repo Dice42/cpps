@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:45:11 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/22 12:27:57 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:55:24 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		Contact& operator/(const Contact& rhs);
+		Contact& operator=(const Contact& rhs);
 		
 		/* getters */
 		std::string		get_first_name(void) const;

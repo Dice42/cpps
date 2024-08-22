@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:45:09 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/22 12:29:36 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:55:28 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Contact::~Contact(void)
 	return ;
 }
 
-Contact& Contact::operator/(const Contact& rhs)
+Contact& Contact::operator=(const Contact& rhs)
 {
 	this->_first_name = rhs.get_first_name();
 	this->_last_name = rhs.get_last_name();

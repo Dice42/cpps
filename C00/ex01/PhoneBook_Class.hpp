@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:47:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/22 11:57:20 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/22 21:35:51 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,16 @@ class PhoneBook
 
 
 		| INDEX  (print the first 10 char only) | first_name | last_name | nick_name |
+
+		so will str string resize it to 10 
 */
 
-	void	search_contact(Contact cont);
+
+/* i should have a function that is called saved contacts
+	itll be very usable in the main and in the class */
+	
+	std::string	resize_content(std::string str);
+	void		search_contact(std::string user_index);
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 15:37:04 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/22 11:52:48 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/22 21:31:31 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Contact_Class.hpp"
 #include <iostream>
 #include <string>
+# include <iomanip>
 
 
 /* we sent temp which the a reference to the actual object 
@@ -62,7 +63,16 @@ int main (void)
 		}
 		else if (line == "SEARCH")
 		{
-			
+			std::string str[4];
+
+			str[0] =  "Index"; str[1] = "First_Name"; str[2] = "Last_Name"; str[3] = "Nick_Name"; 
+			for (int i = 0; i < 4; i++)
+			std::cout << std::setw(10) << str[i] << "|";
+			std::cout << std::endl;
+			/* search function */
+			std::string	line;
+			std::getline(std::cin, line);
+			phonebook.search_contact(line);
 			//DO SOMETHING
 		}
 		if (std::cin.eof())
