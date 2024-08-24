@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:44:11 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/23 23:21:32 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/24 15:59:01 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 PhoneBook::PhoneBook(void) : _index(0)
 {
+	std::cout << CYAN << "╔══════════════════════════════════════════════════════════════════╗" << std::endl;
+    std::cout << CYAN << "║" << RESET << YELLOW << " Welcome to the 80s! Experience the magic of retro technology.    " << CYAN << "║" << std::endl;
+    std::cout << CYAN << "║" << RESET << GREEN  << " This awesome phonebook software stores your contacts with style. " << CYAN << "║" << std::endl;
+    std::cout << CYAN << "╚══════════════════════════════════════════════════════════════════╝" << RESET << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	return ;
+    std::cout << MAGENTA << "╔══════════════════════════════════════════════════════════╗" << std::endl;
+    std::cout << MAGENTA << "║" << RESET << YELLOW << " Goodbye! You've just experienced a blast from the past.  " << MAGENTA << "║" << std::endl;
+    std::cout << MAGENTA << "║" << RESET << GREEN  << " Thank you for using our awesome 80s-style phonebook.     " << MAGENTA << "║" << std::endl;
+    std::cout << MAGENTA << "║" << RESET << BLUE   << " See you next time for another retro adventure!           " << MAGENTA << "║" << std::endl;
+    std::cout << MAGENTA << "╚══════════════════════════════════════════════════════════╝" << RESET << std::endl;
+    return ;
 }
 
 /**
@@ -40,9 +49,10 @@ std::string	PhoneBook::resize_content(std::string const str)
 
 void		PhoneBook::search_contact(std::string user_index)
 {
-	if (user_index.size() > 2 || (user_index < "0" || user_index > "9"))
+	if (user_index.size() > 1 || (user_index < "0" || user_index > "9"))
 	{
-		std::cout << "Wrong Index!, Please enter a valid Index to Display the user info" << std::endl;
+		printf("im here\n");
+		std::cout << RED << "Wrong Index!, Please enter a valid Index to Display the user info. Please try again." << RESET << std::endl;
 		return ;
 	}
 	std::cout << "First Name     : " << _contact[std::atoi(user_index.c_str()) - 1].get_first_name() << std::endl;
@@ -56,6 +66,11 @@ void		PhoneBook::list_table(void)
 {
 	std::string	str[4];
 	
+	std::cout << CYAN << "╔═════════════════════════════════════════════════════════════════╗" << std::endl;
+    std::cout << CYAN << "║" << RESET << GREEN << "  You've entered the search mode! Here's a list of contacts:   " << CYAN << "║" << std::endl;
+    std::cout << CYAN << "║" << RESET << YELLOW << "  Select an index to view the detailed information.            " << CYAN << "║" << std::endl;
+    std::cout << CYAN << "╚═════════════════════════════════════════════════════════════════╝" << RESET << std::endl;
+
 	std::cout << "---------------------------------------------" << std::endl;
 	str[0] =  "Index"; str[1] = "First_Name"; str[2] = "Last_Name"; str[3] = "Nick_Name"; 
 	std::cout << "|";
@@ -104,23 +119,24 @@ void		PhoneBook::ft_start(void)
 {
 	std::string line;
 
-	while (line != "EXIT" || line != "exit")
+	while (1)
 	{
 		std::cout << "Enter a command: " << std::endl;
 		std::getline(std::cin, line);
-		if (line == "ADD" || line == "add")
+		if (line == "ADD")
 			check_contact_info(line);
-		else if (line == "SEARCH" || line == "search")
+		else if (line == "SEARCH")
 		{
 			list_table();
 			std::cout << "Enter an index to display user info: " << std::endl;
 			std::getline(std::cin, line);
 			search_contact(line);
 		}
-		if (std::cin.eof())
+		if (std::cin.eof() || line == "EXIT")
 		{
 			std::cout << std::endl;
-			return ;
+			break;
 		}
 	}
+	return ;
 }

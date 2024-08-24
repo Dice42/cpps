@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:27:20 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/23 22:33:04 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/24 16:01:23 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool		PhoneBook::check_first_name(std::string line, Contact& temp)
 		return (false);
 	if (!line.c_str() || line.size() == 0)
 	{
-		std::cout << "please enter a valid first name" << std::endl << std::endl;
+		std::cout << RED << "Error: First name cannot be empty. Please try again." << RESET << std::endl << std::endl;
 		return (false);
 	}	
 	temp.set_first_name(line);
@@ -32,7 +32,7 @@ bool		PhoneBook::check_last_name(std::string line, Contact& temp)
 	std::getline(std::cin, line);
 	if (!line.c_str() || line.size() == 0 )
 	{
-		std::cout << "please enter a valid last name" << std::endl << std::endl;
+		std::cout << RED << "Error: Last name cannot be empty. Please try again." << RESET << std::endl << std::endl;
 		return (false);
 	}
 	temp.set_last_name(line);
@@ -45,7 +45,7 @@ bool		PhoneBook::check_nick_name(std::string line, Contact& temp)
 	std::getline(std::cin, line);
 	if (!line.c_str() || line.size() == 0)
 	{
-		std::cout << "please enter a valid nick name" << std::endl << std::endl;
+		std::cout << RED << "Error: Nick name cannot be empty. Please try again." << RESET << std::endl << std::endl;
 		return (false);
 	}
 	temp.set_nickname(line);
@@ -66,7 +66,7 @@ bool		PhoneBook::check_phone_num(std::string line, Contact& temp)
 	}
 	if (!isdigit || !line.c_str() || line.size() == 0)
 	{
-		std::cout << "please enter a valid phone number" << std::endl << std::endl;
+		std::cout << RED << "Error: Phone number cannot be empty. Please try again." << RESET << std::endl << std::endl;
 		return (false);
 	}
 	temp.set_phone_num(line);
@@ -79,7 +79,7 @@ bool		PhoneBook::check_secret(std::string line, Contact& temp)
 	std::getline(std::cin, line);
 	if (!line.c_str())
 	{
-		std::cout << "please enter a valid secret" << std::endl << std::endl;
+		std::cout << RED << "Error: you must have a dark secret. Please try again." << RESET << std::endl << std::endl;
 		return (false);
 	}
 	temp.set_secret(line);
