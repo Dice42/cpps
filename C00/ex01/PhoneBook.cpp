@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:44:11 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/24 15:59:01 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/24 17:19:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ PhoneBook::PhoneBook(void) : _index(0)
 	std::cout << CYAN << "╔══════════════════════════════════════════════════════════════════╗" << std::endl;
     std::cout << CYAN << "║" << RESET << YELLOW << " Welcome to the 80s! Experience the magic of retro technology.    " << CYAN << "║" << std::endl;
     std::cout << CYAN << "║" << RESET << GREEN  << " This awesome phonebook software stores your contacts with style. " << CYAN << "║" << std::endl;
+	std::cout << CYAN << "║" << RESET << BLUE   << " Welcome! Navigate through the phonebook using these commands:    " << CYAN << "║" << std::endl;
+    std::cout << CYAN << "║" << RESET << GREEN  << "  • " << BLUE << "ADD" << RESET << WHITE << "    - Add a new contact.        " << CYAN << std::setw(30) << "║" << std::endl;
+    std::cout << CYAN << "║" << RESET << GREEN  << "  • " << BLUE << "SEARCH" << RESET << WHITE << " - Search and view contacts. " << CYAN << std::setw(30) << "║" << std::endl;
+    std::cout << CYAN << "║" << RESET << GREEN  << "  • " << BLUE << "EXIT" << RESET << WHITE << "   - Quit the program.         " << CYAN << std::setw(30) << "║" << std::endl;
     std::cout << CYAN << "╚══════════════════════════════════════════════════════════════════╝" << RESET << std::endl;
 	return ;
 }
@@ -49,9 +53,8 @@ std::string	PhoneBook::resize_content(std::string const str)
 
 void		PhoneBook::search_contact(std::string user_index)
 {
-	if (user_index.size() > 1 || (user_index < "0" || user_index > "9"))
+	if (user_index.size() > 1 || user_index < "1" || user_index > "8")
 	{
-		printf("im here\n");
 		std::cout << RED << "Wrong Index!, Please enter a valid Index to Display the user info. Please try again." << RESET << std::endl;
 		return ;
 	}
@@ -93,6 +96,11 @@ void		PhoneBook::check_contact_info(std::string line)
 {
 	Contact	temp;
 
+	std::cout << BLUE << "╔═══════════════════════════════════════════════════════════════════════════╗" << std::endl;
+	std::cout << BLUE << "║" << RESET << LCYAN << " You've chosen to add a new contact. Please provide the required details." << BLUE << "  ║" << std::endl;
+	std::cout << BLUE << "║" << RESET << LCYAN << " Kindly avoid leaving any fields empty, or you'll be prompted to retry." << BLUE << "    ║" << std::endl;
+	std::cout << BLUE << "╚═══════════════════════════════════════════════════════════════════════════╝" << RESET << std::endl; 
+	
 	if (!check_first_name(line, temp))
 		return ;	
 	if (!check_last_name(line, temp))
@@ -121,6 +129,11 @@ void		PhoneBook::ft_start(void)
 
 	while (1)
 	{
+		if (std::cin.eof() || line == "EXIT")
+		{
+			std::cout << std::endl;
+			break;
+		}
 		std::cout << "Enter a command: " << std::endl;
 		std::getline(std::cin, line);
 		if (line == "ADD")
@@ -132,11 +145,8 @@ void		PhoneBook::ft_start(void)
 			std::getline(std::cin, line);
 			search_contact(line);
 		}
-		if (std::cin.eof() || line == "EXIT")
-		{
-			std::cout << std::endl;
-			break;
-		}
+		else
+			std::cout << YELLOW << "Wrong Command!, try again!" << RESET << std::endl;
 	}
 	return ;
 }
