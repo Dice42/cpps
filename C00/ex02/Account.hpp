@@ -18,7 +18,7 @@
 
 class Account {
 
-/*static function inside a classs
+/*static function inside a class
 	means that we can use this function without a instance
 	*/
 public:
