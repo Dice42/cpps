@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:44:11 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/24 17:19:50 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/25 18:16:13 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ PhoneBook::~PhoneBook(void)
  * @param str 
  * @return std::string 
  */
-std::string	PhoneBook::resize_content(std::string const str)
+std::string	PhoneBook::_resize_content(std::string const str)
 {
 	std::string temp;
 
@@ -51,21 +51,21 @@ std::string	PhoneBook::resize_content(std::string const str)
 	return (temp);
 }
 
-void		PhoneBook::search_contact(std::string user_index)
+void		PhoneBook::_search_contact(std::string user_index)
 {
 	if (user_index.size() > 1 || user_index < "1" || user_index > "8")
 	{
 		std::cout << RED << "Wrong Index!, Please enter a valid Index to Display the user info. Please try again." << RESET << std::endl;
 		return ;
 	}
-	std::cout << "First Name     : " << _contact[std::atoi(user_index.c_str()) - 1].get_first_name() << std::endl;
-	std::cout << "Last Name      : " << _contact[std::atoi(user_index.c_str()) - 1].get_last_name() << std::endl;
-	std::cout << "Nick Name      : " << _contact[std::atoi(user_index.c_str()) - 1].get_nickname() << std::endl;
-	std::cout << "Phone Number   : " << _contact[std::atoi(user_index.c_str()) - 1].get_phone_num() << std::endl;
-	std::cout << "Darkest Secret : " << _contact[std::atoi(user_index.c_str()) - 1].get_secret() << std::endl;
+	std::cout << BLUE << "First Name     : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_first_name() << std::endl;
+	std::cout << BLUE << "Last Name      : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_last_name() << std::endl;
+	std::cout << BLUE << "Nick Name      : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_nickname() << std::endl;
+	std::cout << BLUE << "Phone Number   : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_phone_num() << std::endl;
+	std::cout << BLUE << "Darkest Secret : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_secret() << std::endl;
 }
 
-void		PhoneBook::list_table(void)
+void		PhoneBook::_list_table(void)
 {
 	std::string	str[4];
 	
@@ -84,15 +84,15 @@ void		PhoneBook::list_table(void)
 	for (int i = 0; i < 8 ; i++)
 	{
 		std::cout << "|" << std::setw(10) << i + 1 << '|';
-		std::cout << std::setw(10) << resize_content(PhoneBook::_contact[i].get_first_name()) << '|';
-		std::cout << std::setw(10) << resize_content(PhoneBook::_contact[i].get_last_name()) << '|';
-		std::cout << std::setw(10) << resize_content(PhoneBook::_contact[i].get_nickname()) << '|';
+		std::cout << std::setw(10) << _resize_content(PhoneBook::_contact[i].get_first_name()) << '|';
+		std::cout << std::setw(10) << _resize_content(PhoneBook::_contact[i].get_last_name()) << '|';
+		std::cout << std::setw(10) << _resize_content(PhoneBook::_contact[i].get_nickname()) << '|';
 		std::cout << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
-void		PhoneBook::check_contact_info(std::string line)
+void		PhoneBook::_check_contact_info(std::string line)
 {
 	Contact	temp;
 
@@ -101,21 +101,21 @@ void		PhoneBook::check_contact_info(std::string line)
 	std::cout << BLUE << "║" << RESET << LCYAN << " Kindly avoid leaving any fields empty, or you'll be prompted to retry." << BLUE << "    ║" << std::endl;
 	std::cout << BLUE << "╚═══════════════════════════════════════════════════════════════════════════╝" << RESET << std::endl; 
 	
-	if (!check_first_name(line, temp))
+	if (!_check_first_name(line, temp))
 		return ;	
-	if (!check_last_name(line, temp))
+	if (!_check_last_name(line, temp))
 		return ;	
-	if (!check_nick_name(line, temp))
+	if (!_check_nick_name(line, temp))
 		return ;	
-	if (!check_phone_num(line, temp))
+	if (!_check_phone_num(line, temp))
 		return ;	
-	if (!check_secret(line, temp))
+	if (!_check_secret(line, temp))
 		return ;	
-	add_contact(temp);
+	_add_contact(temp);
 	return ;
 }
 
-void		PhoneBook::add_contact(Contact cont)
+void		PhoneBook::_add_contact(Contact cont)
 {
 	this->_contact[_index]= cont;
 	this->_index++;
@@ -137,13 +137,13 @@ void		PhoneBook::ft_start(void)
 		std::cout << "Enter a command: " << std::endl;
 		std::getline(std::cin, line);
 		if (line == "ADD")
-			check_contact_info(line);
+			_check_contact_info(line);
 		else if (line == "SEARCH")
 		{
-			list_table();
+			_list_table();
 			std::cout << "Enter an index to display user info: " << std::endl;
 			std::getline(std::cin, line);
-			search_contact(line);
+			_search_contact(line);
 		}
 		else
 			std::cout << YELLOW << "Wrong Command!, try again!" << RESET << std::endl;

@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 15:37:04 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/25 18:10:26 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/08/25 22:25:22 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/08/25 22:26:19 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int main (void)
-{
-	PhoneBook 	phonebook;
-	phonebook.ft_start();
-	return (0);
-}
+
+#endif

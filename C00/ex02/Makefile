@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/20 00:04:31 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/25 18:18:03 by mohammoh         ###   ########.fr        #
+#    Created: 2024/08/25 18:12:28 by mohammoh          #+#    #+#              #
+#    Updated: 2024/08/25 18:13:34 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
+SRC = Account.cpp tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = megaphone
+NAME = logs
 
 all: $(NAME)
 
