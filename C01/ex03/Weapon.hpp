@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 07:45:51 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 12:22:19 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:52:52 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 
 
 	public:
-		const std::string&		getType(void);
+		std::string const&		getType(void);
 		void					setType(std::string const  type);
 		Weapon(std::string w);
 		Weapon();
