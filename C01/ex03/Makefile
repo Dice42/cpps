@@ -6,11 +6,11 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 07:42:15 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 07:42:55 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/27 10:57:23 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Weapon.hpp Weapon.cpp HumanA.hpp HumanA.cpp HumanB.hpp HumanB.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -33,9 +33,12 @@ run: $(NAME)
 clean:
 	$(RM) $(OBJ)
 
-fclean: clean
+fclean: 
+	make clean
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: 
+	make fclean
+	make all
 
 .PHONY: all run clean fclean re

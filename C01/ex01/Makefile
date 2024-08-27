@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 06:59:59 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 07:00:30 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/27 10:58:18 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = zombies
+NAME = attack
 
 all: $(NAME)
 
@@ -33,9 +33,12 @@ run: $(NAME)
 clean:
 	$(RM) $(OBJ)
 
-fclean: clean
+fclean: 
+	make clean
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: 
+	make fclean
+	make all
 
 .PHONY: all run clean fclean re

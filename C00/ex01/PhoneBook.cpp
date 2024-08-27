@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:44:11 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 10:49:09 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 11:15:01 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		PhoneBook::_search_contact(std::string user_index)
 	std::cout << BLUE << "Darkest Secret : " << RESET << _contact[std::atoi(user_index.c_str()) - 1].get_secret() << std::endl;
 }
 
-void		PhoneBook::list_table(void)
+void		PhoneBook::_list_table(void)
 {
 	std::string	str[4];
 	
@@ -140,7 +140,7 @@ void		PhoneBook::ft_start(void)
 			_check_contact_info(line);
 		else if (line == "SEARCH")
 		{
-			list_table();
+			_list_table();
 			std::cout << "Enter an index to display user info: " << std::endl;
 			std::getline(std::cin, line);
 			_search_contact(line);

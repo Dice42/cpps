@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:47:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 10:48:48 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 11:14:05 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ class PhoneBook
 		
 		std::string		_resize_content(std::string const str);
 		void			_search_contact(std::string user_index);
+		void			_list_table(void);
 
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
 	
 		void			ft_start(void);
-		void			list_table(void);
 };
 
 #endif
