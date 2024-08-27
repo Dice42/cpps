@@ -6,11 +6,11 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:51:25 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/26 20:42:49 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 07:16:09 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie(void) {}
 
@@ -22,7 +22,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie(void)
 {
-	std::cout << _name <<  " destructor is called" << std::endl;	
+	std::cout <<  " destructor is called for: " << _name << std::endl;	
 }
 
 void		Zombie::announce(void)

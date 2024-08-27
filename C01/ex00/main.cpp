@@ -6,16 +6,16 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:10:50 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/26 20:41:45 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 07:17:16 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 int main ()
 {
 	Zombie z("new");
-	Zombie *z1;
+	Zombie *z1 = NULL;
 	
 	
 

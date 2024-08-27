@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 22:25:22 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/26 20:38:21 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 07:25:24 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ class Zombie
 		~Zombie(void);
 		
 		void					announce(void);
-
 		void					set_name(std::string name);
-		static Zombie* 			newZombie(std::string name);
-		static void 			randomChump(std::string name);
+		Zombie* 				newZombie(std::string name);
+		void 					randomChump(std::string name);
 };
 
 #endif
