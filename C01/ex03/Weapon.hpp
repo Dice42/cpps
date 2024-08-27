@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 07:45:51 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 11:05:16 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/27 12:22:19 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Weapon
 		Weapon(std::string w);
 		Weapon();
 		~Weapon(void);
-	
 };
 
 #endif

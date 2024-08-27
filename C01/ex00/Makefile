@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 18:03:24 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 10:58:31 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/27 12:56:02 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = attack
+NAME = zombies
 
 all: $(NAME)
 

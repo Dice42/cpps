@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 07:26:34 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 10:58:10 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/27 12:56:26 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = attack
+NAME = brain
 
 all: $(NAME)
 

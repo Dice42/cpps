@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 06:59:59 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 10:58:18 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/27 12:56:17 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = attack
+NAME = zombiehorde
 
 all: $(NAME)
 
