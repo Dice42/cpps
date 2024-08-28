@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 21:12:23 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 21:17:17 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/28 21:45:14 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int ac, char **av)
 	if (ac == 2)
 		harl.complain(av[1]);
 	else
-		std::cout << RED << "ERROR: " << RESET << "Wrong number of parameters" << std::endl;
+		std::cout << YELLOW << "Wrong number of parameters" << RESET << std::endl;
     return 0;
 }
