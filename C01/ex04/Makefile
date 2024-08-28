@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 14:41:16 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/27 14:41:22 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/28 09:13:57 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ CC = c++
 RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+# CPPFLAGS = -g
 
-NAME = attack
+NAME = replace
 
 all: $(NAME)
 
@@ -28,7 +29,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 run: $(NAME)
-	./$(NAME)
+	./$(NAME) 
 
 clean:
 	$(RM) $(OBJ)

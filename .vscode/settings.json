@@ -64,6 +64,8 @@
 		"clocale": "cpp",
 		"fstream": "cpp",
 		"deque": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"file1": "c",
+		"filesystem": "cpp"
 	}
 }
