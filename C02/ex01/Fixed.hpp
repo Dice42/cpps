@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 13:56:25 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/30 21:54:04 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/08/29 16:31:13 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/08/31 14:55:42 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
-#include  <cmath>
+#include <ostream>
 
 class Fixed
 {
@@ -23,36 +23,18 @@ class Fixed
 		static const int	_raw = 8;
 		
 	public:
-		Fixed(Fixed& fixed);
-		Fixed(int const point); 
 		Fixed(void);
+		Fixed(const Fixed& fixed);
+		Fixed(const int point); 
 		~Fixed(void); 
 		
-		/*comparison operation*/
-		bool 		operator>(const Fixed &rhs);
-		bool 		operator<(const Fixed &rhs);
-		bool 		operator>=(const Fixed &rhs);
-		bool 		operator<=(const Fixed &rhs);
-		bool 		operator==(const Fixed &rhs);
-		bool 		operator!=(const Fixed &rhs);
-	
-		/*arithmetic operation*/
-		int 		operator/(const Fixed &rhs);
-		int 		operator+(const Fixed &rhs);
-		int 		operator-(const Fixed &rhs);
-		int 		operator*(const Fixed &rhs);
-
-		/*increment and decrement*/
-		// int 		operator++(const Fixed &rhs);
-		// int 		operator--(const Fixed &rhs);
-
-		/*setters & getters*/
-		int 		getRawBits(void) const;
-		void 		setRawBits(int const raw);
-
-		static Fixed&			min(Fixed& a, Fixed& b);
-		static Fixed& 			min( const Fixed& a, const Fixed& b); 
-		static Fixed&			max(Fixed& a, Fixed& b);
-		static Fixed& 			max(const Fixed&  a, const Fixed&  b); 
+		Fixed& 		operator=(const Fixed &rhs);
+		/* member functions*/
+		float		toFloat(void) const;
+		int			toInt(void) const;
+		int 		getRawBits( void ) const;
+		void 		setRawBits( int const raw );
 };
 #endif
+
+Fixed& 		operato<<(const Fixed &rhs);

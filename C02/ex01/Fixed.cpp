@@ -5,139 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 13:56:42 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/30 21:56:39 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/08/29 16:30:51 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/08/31 14:51:27 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-
-/*****************************constructors & destructors*****************************/
-Fixed::Fixed(int const point)
+Fixed::Fixed(const int point)
 {
-	_point = point;
+	setRawBits(point);
 }
 
 Fixed::Fixed(void) : _point(0)
 {
 	setRawBits(0);
+	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::~Fixed(void) {}
-
-Fixed::Fixed(Fixed& fixed)
+Fixed::~Fixed(void) 
 {
+	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed::Fixed(const Fixed& fixed)
+{
+	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
-/*************************operator overload**************************************/
-
-/*comparison operation*/
-bool		Fixed::operator>(const Fixed &rhs)
+Fixed& 		Fixed::operator=(const Fixed &rhs)
 {
-	if (this->getRawBits() > rhs.getRawBits())
-		return (true);
-	return (false);
-		
-}
-bool		Fixed::operator<(const Fixed &rhs)
-{
-	if (this->getRawBits() < rhs.getRawBits())
-		return (true);
-	return (false);
-		
-}
-bool		Fixed::operator>=(const Fixed &rhs)
-{
-	if (this->getRawBits() >= rhs.getRawBits())
-		return (true);
-	return (false);
-		
-}
-bool		Fixed::operator<=(const Fixed &rhs)
-{
-	if (this->getRawBits() <= rhs.getRawBits())
-		return (true);
-	return (false);
-		
-}
-bool 		Fixed::operator==(const Fixed &rhs)
-{
-	if (this->getRawBits() == rhs.getRawBits())
-		return (true);
-	return (false);
-}
-bool 		Fixed::operator!=(const Fixed &rhs)
-{
-	if (this->getRawBits() != rhs.getRawBits())
-		return (true);
-	return (false);
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_point = rhs.getRawBits();
+	return (*this);
 }
 
-/*arithmetic operation*/
-int 		Fixed::operator/(const Fixed &rhs)
-{
-	this->_point = this->getRawBits() /  rhs.getRawBits();
-	return (this->_point);
-}
-
-int 		Fixed::operator*(const Fixed &rhs)
-{
-	this->_point = this->getRawBits() *  rhs.getRawBits();
-	return (this->_point);
-}
-
-int 		Fixed::operator+(const Fixed &rhs)
-{
-	this->_point = this->getRawBits() +  rhs.getRawBits();
-	return (this->_point);
-}
-
-int 		Fixed::operator-(const Fixed &rhs)
-{
-	this->_point = this->getRawBits() -  rhs.getRawBits();
-	return (this->_point);
-}
-
-/*incremenrt and decrement operation*/
-
-
-/**********************************getters and setters***************************************/
 int 		Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_point);
 }
 
-void 		Fixed::setRawBits( int const raw )
+void 		Fixed::setRawBits( int const point )
 {
-	this->_point = raw;
+	std::cout << "setRawBits member function called" << std::endl;
+	this->_point = point;
 }
 
-/**********************************overloaded member functions***************************************/
-static Fixed& 		min(Fixed& a, Fixed& b)
+float		Fixed::toFloat(void) const
 {
-	if (a.getRawBits() > b.getRawBits())
-		return (a);
-	return (b);
+	//converts the fixed-point value to a floating-point value
+	return ();
 }
-
-static Fixed& 		max(Fixed& a, Fixed& b)
+int			Fixed::toInt(void) const
 {
-	if (a.getRawBits() < b.getRawBits())
-		return (a);
-	return (b);
-}
-
-static Fixed& 		min( const Fixed& a, const Fixed& b) 
-{
-	if (a.getRawBits() > b.getRawBits())
-		return (a);
-	return (b);
-}
-
-static Fixed& 		max(const Fixed&  a, const Fixed&  b)
-{
-	
+	//converts the fixed-point value to an integer value.
+	return ();
 }
