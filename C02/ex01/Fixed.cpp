@@ -6,21 +6,21 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:30:51 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/31 14:51:27 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/31 16:55:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int point)
-{
-	setRawBits(point);
-}
-
 Fixed::Fixed(void) : _point(0)
 {
-	setRawBits(0);
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int point)
+{
+	std::cout << "Int constructor called" << std::endl;
+	setRawBits(point);
 }
 
 Fixed::~Fixed(void) 
