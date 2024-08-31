@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 21:01:21 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/28 21:10:06 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/08/29 10:40:38 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-# CPPFLAGS = -g
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = harlFilter
 

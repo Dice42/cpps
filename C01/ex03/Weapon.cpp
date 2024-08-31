@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 07:52:06 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 11:53:37 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:23:23 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ Weapon::Weapon(std::string w)
 {
 	setType(w);
 }
+
 Weapon::~Weapon(void){}

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 14:24:12 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 20:45:00 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:34:48 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main()
     harl.complain("WARNING");
     harl.complain("ERROR");
     harl.complain("UNKNOWN");
-
     return 0;
 }

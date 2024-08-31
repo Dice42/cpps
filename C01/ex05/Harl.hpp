@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 09:58:10 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 18:53:56 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:19:18 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Harl
 		void		info(void);
 		void		warning(void);
 		void		error(void);
-
 	public:
 		void 		complain(std::string level);
 };

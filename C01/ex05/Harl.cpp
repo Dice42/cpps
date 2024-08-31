@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:07:31 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 21:21:53 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:06:57 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-
-
 void	Harl::complain(std::string level)
 {
     void		(Harl::*functionptr[4])();
@@ -52,12 +50,8 @@ void	Harl::complain(std::string level)
     functionptr[3] = &Harl::error;
 	
 	int i = 0;
-	while (i < 4)
-	{
-		if (arr[i].compare(level.c_str()) == 0)
-			break;
+	while (i < 4 && arr[i].compare(level.c_str()) != 0)
 		i++;
-	}
 	
 	switch (i)
 	{

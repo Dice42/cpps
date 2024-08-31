@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/27 14:41:16 by mohammoh          #+#    #+#              #
-#    Updated: 2024/08/29 09:28:47 by mohammoh         ###   ########.fr        #
+#    Created: 2024/08/29 16:29:59 by mohammoh          #+#    #+#              #
+#    Updated: 2024/08/30 11:48:44 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,9 +18,9 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = replace
+NAME = FixedPoint
 
 all: $(NAME)
 
@@ -37,7 +37,7 @@ fclean:
 	make clean
 	$(RM) $(NAME)
 
-re: 
+re: $(NAME)
 	make fclean
 	make all
 

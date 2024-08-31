@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 06:49:20 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 07:12:31 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:18:26 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ Zombie::Zombie(void) {}
 
 Zombie::~Zombie(void)
 {
-	std::cout <<  "Zombie is deleted. " << _name << std::endl;	
+	std::cout <<  "Zombie is deleted. " << std::endl;	
 }

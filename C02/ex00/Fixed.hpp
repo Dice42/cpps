@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 18:10:50 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/29 09:52:54 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/08/29 16:31:13 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/08/30 20:07:45 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main ()
+#include <iostream>
+
+class Fixed
 {
-	Zombie z("new");
-	Zombie *z1 = NULL;
-	
-	z1 = newZombie("z1");
-	z1->announce();
-	z.announce();
-	delete z1;
-}
+	private:
+		int					_point;
+		static const int	_raw = 8;
+		
+	public:
+		Fixed(void);
+		Fixed(const Fixed& fixed);
+		Fixed(int point); 
+		~Fixed(void); 
+		
+		Fixed& 		operator=(const Fixed &rhs);
+		int 		getRawBits( void ) const;
+		void 		setRawBits( int const raw );
+};
+#endif

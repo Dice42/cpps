@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:59:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 09:27:16 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:32:13 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int ac, char **av)
 	}
 	else
 	{
-		std::cout << RED << "Error:" << RESET <<  "Wrong number of parameters" << std::endl;
+		std::cout << RED << "Error: " << RESET <<  "Wrong number of parameters" << std::endl;
 		return (0);
 	}
 	return (0);

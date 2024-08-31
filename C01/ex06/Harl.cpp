@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 21:13:57 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/28 21:43:08 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:14:38 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-    void		(Harl::*functionptr[4])();
+    void		(Harl::*functionptr[5])();
 	std::string arr[] = {"DEBUG", "INFO", "WARNING", "ERROR", level};
 	
     functionptr[0] = &Harl::debug;
@@ -52,21 +52,20 @@ void	Harl::complain(std::string level)
     functionptr[3] = &Harl::error;
 	
 	int i = 0;
-	while (i < 5)
-	{
-		if (arr[i].compare(level.c_str()) == 0)
-			break;
+	while (i < 5 && arr[i].compare(level.c_str()) != 0)
 		i++;
-	}
 	
 	switch (i)
 	{
 		case 0: (this->*functionptr[0])();
 			std::cout << std::endl;
+			 // intentional fall-through
 		case 1: (this->*functionptr[1])();
 			std::cout << std::endl;
+			 // intentional fall-through
 		case 2: (this->*functionptr[2])();
 			std::cout << std::endl;
+			 // intentional fall-through
 		case 3: (this->*functionptr[3])();
 			break;
 		default:
