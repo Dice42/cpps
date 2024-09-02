@@ -6,41 +6,26 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:56:59 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/02 12:26:06 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:18:38 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main( void )
+int main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    Fixed x1(1.0f), y1(1.0f);
+    Fixed x2(5.0f), y2(1.0f);
+    Fixed x3(3.0f), y3(5.0f);
 
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+    Point a(x1, y1);
+    Point b(x2, y2);
+    Point c(x3, y3);
+
+    Fixed px(3.0f), py(3.0f);
+    Point p(px, py);
+
+    std::cout << "Point p is " << (bsp(a, b, c, p) ? "inside" : "outside") << " the triangle" << std::endl;
+
+    return 0;
 }
-
-/*
-	Should output something like (for greater readability, the constructor/destructor mes-
-	sages are removed in the example below):
-	$> ./a.out
-	0
-	0.00390625
-	0.00390625
-	0.00390625
-	0.0078125
-	10.1016
-	10.1016
-$>
-*/
-
-/* If you ever do a division by 0, it is acceptable that the program crashes */
-
