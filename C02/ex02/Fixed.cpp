@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:56:42 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/02 12:22:46 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:26:04 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,14 +137,12 @@ Fixed Fixed::operator++(int)
     return temp;
 }
 
-
 Fixed Fixed::operator--(int)
 {
     Fixed temp = *this;
     --_point;
     return temp;
 }
-
 
 float		Fixed::toFloat(void) const
 {
