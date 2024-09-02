@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:30:51 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/31 16:55:50 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:19:46 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ Fixed::Fixed(void) : _point(0)
 Fixed::Fixed(const int point)
 {
 	std::cout << "Int constructor called" << std::endl;
-	setRawBits(point);
+	_point = point << _bits;
+
+}
+
+Fixed::Fixed(const float point)
+{
+	std::cout << "Float constructor called" << std::endl;
+	_point = roundf(point * (1 << _bits));
 }
 
 Fixed::~Fixed(void) 
@@ -37,7 +44,8 @@ Fixed::Fixed(const Fixed& fixed)
 Fixed& 		Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_point = rhs.getRawBits();
+	if (this != &rhs)
+		this->_point = rhs.getRawBits();
 	return (*this);
 }
 
@@ -47,19 +55,24 @@ int 		Fixed::getRawBits( void ) const
 	return (this->_point);
 }
 
-void 		Fixed::setRawBits( int const point )
+void 		Fixed::setRawBits( int const bits )
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_point = point;
+	this->_point = bits;
 }
 
 float		Fixed::toFloat(void) const
 {
-	//converts the fixed-point value to a floating-point value
-	return ();
+	return (static_cast<float>(_point) / (1 << _bits));
 }
+
 int			Fixed::toInt(void) const
 {
-	//converts the fixed-point value to an integer value.
-	return ();
+	return (_point >> _bits);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return (os);
 }

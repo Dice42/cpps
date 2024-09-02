@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:31:13 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/31 16:57:41 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:19:38 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define FIXED_HPP
 
 #include <iostream>
-#include <ostream>
 
 class Fixed
 {
