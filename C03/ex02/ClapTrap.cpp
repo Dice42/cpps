@@ -6,17 +6,17 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:38:45 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 16:59:35 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:15:28 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void){}
+ClapTrap::ClapTrap(void){std::cout << "ClapTrap Constructor is called" << std::endl;}
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
-{std::cout << "Constructor is called" << std::endl;}
+{std::cout << "ClapTrap Constructor is called" << std::endl;}
+ClapTrap::~ClapTrap(void){std::cout << "ClapTrap Destructor is called" << std::endl;}
 ClapTrap::ClapTrap(const ClapTrap& claptrap) {*this = claptrap;}
-ClapTrap::~ClapTrap(void){std::cout << "Destructor is called" << std::endl;}
 ClapTrap&	ClapTrap::operator=(const ClapTrap& claptrap)
 {
 	_name = claptrap._name;
@@ -58,3 +58,14 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << "ClapTrap " << _name << " No Energy to repair!" << std::endl;
 }
+/*setters*/
+void			ClapTrap::setName(std::string name) { _name = name;}
+void			ClapTrap::setHitPoints(unsigned int hitPoints) { _hitPoints = hitPoints;}	
+void			ClapTrap::setEnergyPoints(unsigned int energyPoints) { _energyPoints = energyPoints;}
+void			ClapTrap::setAttackDamage(unsigned int attackDamage) { _attackDamage = attackDamage;}
+
+/*getters*/
+std::string		ClapTrap::getName(void) const { return _name;}
+unsigned int	ClapTrap::getHitPoints(void) const { return _hitPoints;}
+unsigned int	ClapTrap::getEnergyPoints(void) const { return _energyPoints;}
+unsigned int	ClapTrap::getAttackDamage(void) const { return _attackDamage;}

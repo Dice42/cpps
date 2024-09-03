@@ -6,18 +6,27 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:54:12 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 14:20:11 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:50:33 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap a("enemy");
-	ClapTrap b("hitman");
+	ScavTrap c("robot");
 
-	a.attack("hitman");
-	a.beRepaired(10);
-	a.takeDamage(30);
+	
+	ScavTrap b;
+
+	ScavTrap d(c);
+	c.attack("human");
+	c.guardGate();
+	c.takeDamage(10);
+	// c.beRepaired(10);
+	c.attack("human");
+	b = c;
+	std::cout<< "b energy " << b.getEnergyPoints() << std::endl;
+	std::cout<< "c energy " << d.getEnergyPoints() << std::endl;
+	
 }

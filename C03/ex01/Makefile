@@ -6,11 +6,11 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 13:40:12 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/03 13:40:33 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/03 14:46:09 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 all: $(NAME)
 

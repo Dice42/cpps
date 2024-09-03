@@ -6,18 +6,19 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:54:12 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 14:20:11 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/03 15:53:53 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap a("enemy");
-	ClapTrap b("hitman");
+	FragTrap c("robot");
 
-	a.attack("hitman");
-	a.beRepaired(10);
-	a.takeDamage(30);
+	c.attack("human");
+	c.highFivesGuys();
+	c.takeDamage(10);
+	c.beRepaired(10);
+	c.attack("human");
 }
