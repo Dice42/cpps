@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:06:52 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/02 17:10:50 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:00:30 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class ClapTrap
 {
 	private:
-		std::string	_name;
-		int			_hitPoint;
-		int			_energyPoint;
-		int			_attackPoint;
+		std::string				_name;
+		unsigned int			_hitPoint;
+		int						_energyPoint;
+		int						_attackPoint;
 
 	public:
 		ClapTrap(void);
