@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:38:21 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 18:12:14 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:44:44 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
+
+#define RESET   "\033[0m"
+#define YELLOW  "\033[33m"
 
 class ScavTrap : public ClapTrap
 {

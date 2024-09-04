@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:39:55 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 18:50:32 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:56:35 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
+
+#define RESET   "\033[0m"
+#define BLUE    "\033[34m"
 
 class FragTrap : public ClapTrap
 {
@@ -25,7 +28,6 @@ class FragTrap : public ClapTrap
 		FragTrap(const FragTrap& fragtrap);
 
 		FragTrap&	operator=(const FragTrap& rhs);
-		void		attack(const std::string& target);
 		void 		highFivesGuys();
 };
 

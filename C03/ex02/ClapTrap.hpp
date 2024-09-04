@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:06:52 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 19:29:45 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:44:17 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@
 #include <iostream>
 
 #define RESET   "\033[0m"
-#define RED     "\033[31m"
 #define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string				_name;
 		unsigned int			_hitPoints;
 		unsigned int			_energyPoints;
@@ -40,19 +37,7 @@ class ClapTrap
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		
-		/*setters*/
-		void			setName(std::string name);
-		void			setHitPoints(unsigned int hitPoints);
-		void			setEnergyPoints(unsigned int energyPoints);
-		void			setAttackDamage(unsigned int attackDamage);
-		
-		/*getters*/
-		std::string		getName(void) const;
-		unsigned int	getHitPoints(void) const;
-		unsigned int	getEnergyPoints(void) const;
-		unsigned int	getAttackDamage(void) const;
-		
+
 };
 
 #endif	

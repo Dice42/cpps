@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:52:44 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 19:02:42 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:49:32 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {
@@ -28,6 +32,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap(void);
 
 		DiamondTrap&	operator=(const DiamondTrap& rhs);
+		
 		void whoAmI();
 
 };

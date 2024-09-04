@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:54:12 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/03 14:20:11 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:05:49 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,7 @@ int main()
 	a.attack("hitman");
 	a.beRepaired(10);
 	a.takeDamage(30);
+
+	ClapTrap o(a);
+	o.attack("lol");
 }
