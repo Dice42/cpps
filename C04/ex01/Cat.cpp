@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 10:18:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 10:30:15 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/05 10:16:55 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/05 13:56:33 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(void) : Animal()
+Cat::Cat(void) : Animal()
 {
-	type = "Dog";
-	std::cout << YELLOW << "Dog constructor is called" << RESET << std::endl;
+	type = "Cat";
+	brain = new Brain();
+	std::cout << RED << "Cat constructor is called" << RESET << std::endl;
 }
 
 /* destructor */
-Dog::~Dog(void)
+Cat::~Cat(void)
 {
-	std::cout << YELLOW << "Dog Destructor is called" << RESET << std::endl;
+	delete brain;
+	std::cout << "Cat Destructor is called" << std::endl;
 }
 
 /* copy constructor */
-Dog::Dog(const Dog& other): Animal() { *this = other; }
+Cat::Cat(const Cat& other) : Animal()  { *this = other; }
 
 /* copy assignment operator */
-Dog&		Dog::operator=(const Dog& rhs)
+Cat&		Cat::operator=(const Cat& rhs)
 {
 	if (this != &rhs)
+	{
 		type = rhs.type;
+		brain = rhs.brain;
+	}
 	return (*this);
 }
 
-void		Dog::makeSound(void) const
+void		Cat::makeSound(void) const
 {
-	std::cout << YELLOW << "Huff! huff! Huffff!!!" << RESET <<std::endl; 
+	std::cout << RED << "Meow! Meeeoooooow! Meow!!!" << RESET <<std::endl; 
 }

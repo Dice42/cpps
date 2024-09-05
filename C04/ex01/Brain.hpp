@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 20:18:23 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 10:07:19 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/05 12:16:23 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/05 19:36:14 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+
+class Brain
 {
+	private:
+		std::string		*ideas;
 	public:
-		Cat(void);
-		~Cat(void);
-		Cat(const Cat& other);
-		
-		Cat&	operator=(const Cat& rhs);
-		void	makeSound(void) const;
-	
+		Brain(void);
+		virtual ~Brain(void);
+		Brain(Brain& other);
+
+		Brain&				operator=(const Brain& rhs);
+		std::string*		getBrainIdeas();
 };
 
 #endif

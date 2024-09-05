@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 10:18:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 10:30:15 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/04 20:27:55 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/05 12:50:16 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog(void) : Animal()
+/* default constructor */
+Animal::Animal(void)
 {
-	type = "Dog";
-	std::cout << YELLOW << "Dog constructor is called" << RESET << std::endl;
+	type = "Animal";
+	std::cout << GREEN << "Animal constructor is called" << RESET << std::endl;
 }
 
 /* destructor */
-Dog::~Dog(void)
+Animal::~Animal(void)
 {
-	std::cout << YELLOW << "Dog Destructor is called" << RESET << std::endl;
+	std::cout <<"Animal Destructor is called" << std::endl;
 }
 
 /* copy constructor */
-Dog::Dog(const Dog& other): Animal() { *this = other; }
+Animal::Animal(const Animal& other) { *this = other; }
 
 /* copy assignment operator */
-Dog&		Dog::operator=(const Dog& rhs)
+Animal&		Animal::operator=(const Animal& rhs)
 {
 	if (this != &rhs)
 		type = rhs.type;
 	return (*this);
 }
 
-void		Dog::makeSound(void) const
+void		Animal::makeSound(void) const
 {
-	std::cout << YELLOW << "Huff! huff! Huffff!!!" << RESET <<std::endl; 
+	std::cout << GREEN << "Sound of: " << type << RESET <<std::endl; 
 }
+
+std::string		Animal::getType(void) const { return type;}

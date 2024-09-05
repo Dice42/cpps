@@ -6,36 +6,37 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:25:43 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 12:00:18 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/05 22:22:17 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include <iostream>
 
 int main()
 {
+	// const Animal* meta[10];
 
-	// Animal a;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* c = new WrongCat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << c->getType() << " " << std::endl;
+	// for (int i = 0; i < 10; i++)
+	// {
+	// 	if (i % 2 == 0)
+	// 		meta[i] = new Dog();
+	// 	else
+	// 		meta[i] = new Cat();
+	// }
 	
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	c->makeSound();
-	delete meta;
-	delete i;
-	delete j;
-	delete c;
+	// for (int i=0; i < 10; i++)
+	// {
+	// 		delete meta[i];
+	// }
+	// return 0;
+	Dog basic;
+	{
+		basic.printIdeas();
+		Dog tmp (basic);
+		tmp.printIdeas();
+	}
 
-return 0;
 }
