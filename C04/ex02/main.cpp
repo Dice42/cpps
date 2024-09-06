@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:25:43 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 16:21:07 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:29:04 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+// 	const Animal* j = new Dog();
+// 	const Animal* i = new Cat();
+// 	delete j;//should not create a leak
+// 	delete i;
 
 	// const Animal* meta[4];
 
@@ -43,17 +43,19 @@ int main()
 	// 	tmp.printIdeas();
 	// 	basic.printIdeas();
 	// }
-	// Animal *tmp;
-	// tmp = new Dog;
-	// std::cout << tmp->getType() << std::endl;
+	Dog *tmp;
+	tmp = new Dog;
+	std::cout << tmp->getType() << std::endl;
+	delete tmp;
 
 	// Animal *city(tmp);
 	// city->makeSound();
 	// tmp->makeSound();
 	// delete tmp;
 
-	// Cat cat;
-	// cat.makeSound();
-	// Cat copycat = cat;
-	// copycat.makeSound();
+	Cat cat;
+	cat.makeSound();
+	Cat copycat = cat;
+	copycat.makeSound();
 }
+

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:16:55 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 15:04:31 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:28:27 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,5 @@ void		Cat::printIdeas(void)
 	for(int i = 0; i < 100; i++)
 		std::cout << brain->getBrainIdeas()[i] << std::endl;
 }
+
+std::string		Cat::getType(void) const { return type;}

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:17:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 14:35:16 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:22:30 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ class Animal
 		
 		Animal&			operator=(const Animal& rhs);
 		
-
-
 		
-		virtual void	makeSound(void) const;
-		std::string		getType(void) const;
+		virtual void			makeSound(void) const = 0;
+		virtual std::string		getType(void) const = 0;
 
 };
 

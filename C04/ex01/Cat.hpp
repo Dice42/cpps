@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:18:23 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 12:19:40 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:04:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Cat : public Animal
 		
 		Cat&	operator=(const Cat& rhs);
 		void	makeSound(void) const;
+		void	printIdeas(void);
 	
 };
 

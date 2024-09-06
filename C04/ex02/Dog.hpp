@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:19:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 14:54:37 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:27:48 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class Dog : public Animal
 		~Dog(void);
 		Dog(const Dog& other);
 		
-		Dog&	operator=(const Dog& rhs);
-		void	makeSound(void) const;
-		void	printIdeas(void);
+		Dog&			operator=(const Dog& rhs);
+		void			makeSound(void) const;
+		void			printIdeas(void);
+		std::string		getType(void) const;
 	
 };
 

@@ -6,11 +6,11 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/04 20:14:39 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/06 14:36:11 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/06 16:50:20 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRC = main.cpp ICharacter.cpp AMateria.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
