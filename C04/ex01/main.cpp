@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:25:43 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 22:22:17 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 10:33:56 by ++4              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int main()
 		basic.printIdeas();
 		Dog tmp (basic);
 		tmp.printIdeas();
+		basic.printIdeas();
 	}
-
+	Animal *tmp;
+	tmp = new Cat;
+	std::cout << tmp->getType() << std::endl;
 }

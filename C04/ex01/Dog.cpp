@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:18:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/05 22:20:41 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/06 10:31:02 by ++4              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Dog&		Dog::operator=(const Dog& rhs)
 
 void		Dog::makeSound(void) const
 {
-	std::cout << YELLOW << "Huff! huff! Huffff!!!" << RESET <<std::endl; 
+	std::cout << YELLOW << "wooof! wooof! wooofff!!!" << RESET <<std::endl; 
 }
 
 void		Dog::printIdeas(void)
