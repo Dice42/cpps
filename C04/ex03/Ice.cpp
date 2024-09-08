@@ -6,18 +6,15 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 17:02:21 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 18:28:52 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:38:11 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void): AMateria("ice")
-{
-	std::cout << "Ice constructor is called" << std::endl;
-}
+Ice::Ice(void): AMateria("ice") {}
 
-Ice::Ice(const Ice& other) : AMateria(other._type)
+Ice::Ice(const Ice& other) : AMateria(other)
 {
 	*this = other;
 }
@@ -25,19 +22,18 @@ Ice::Ice(const Ice& other) : AMateria(other._type)
 Ice&	Ice::operator=(const Ice& rhs)
 {
 	if (this != &rhs)
-	{
-		this->_type = rhs._type;
-	}
+		AMateria::operator=(rhs);
 	return (*this);
 }
 
-Ice::~Ice(void)
-{
-	std::cout << "Ice destructor is called" << std::endl;
-}
+Ice::~Ice(void) {}
 
 AMateria* 	Ice::clone() const
 {
-	AMateria *New = new Ice;
-	return (New);
+	return (new Ice);
+}
+
+void		Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at < " << target.getName() << " *" << std::endl;
 }

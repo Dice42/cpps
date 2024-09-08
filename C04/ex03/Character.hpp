@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 20:23:49 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 22:35:22 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/07 15:53:45 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
 
 class Character : public ICharacter
 {

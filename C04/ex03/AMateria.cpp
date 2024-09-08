@@ -6,29 +6,16 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:51:08 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 22:23:16 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:19:12 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria()
-{
-	// _type = type;
-	std::cout << "AMateria constructor is called" << std::endl;
-}
-
-AMateria::AMateria(std::string const & type)
-{
-	_type = type;
-	std::cout << "AMateria constructor is called" << std::endl;
-}
+AMateria::AMateria(std::string const & type) : _type(type) {}
 
 /* copy constructor */
-AMateria::AMateria(const AMateria & other)
-{
-	*this = other;
-}
+AMateria::AMateria(const AMateria & other) : _type(other._type) {}
 
 AMateria&		AMateria::operator=(const AMateria& rhs)
 {
@@ -37,12 +24,14 @@ AMateria&		AMateria::operator=(const AMateria& rhs)
 	return (*this);
 }
 
-AMateria::~AMateria(void)
-{
-	std::cout << "AMateria destructor is called" << std::endl;
-}
+AMateria::~AMateria(void){}
 
 std::string const & AMateria::getType() const
 {
 	return (_type);
-} //Returns the materia type
+}
+
+void 	AMateria::use(ICharacter& target)
+{
+    std::cout << "* uses materia on " << target.getName() << " *" << std::endl;
+}

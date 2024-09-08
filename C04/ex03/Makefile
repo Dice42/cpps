@@ -6,11 +6,11 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/04 20:14:39 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/06 16:50:20 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/07 18:04:14 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ICharacter.cpp AMateria.cpp
+SRC = main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
 
-NAME = Animal
+NAME = materia
 
 all: $(NAME)
 

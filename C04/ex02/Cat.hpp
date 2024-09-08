@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:18:23 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 22:38:52 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/08 08:15:09 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 class Cat : public Animal
 {
 	private:
-		Dog  	l[9];
-		Animal	*a[3];
 		Brain	*brain;
 
 	public:
