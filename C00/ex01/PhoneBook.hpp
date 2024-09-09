@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:47:39 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/27 11:14:05 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/08/25 18:14:30 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ class PhoneBook
 		bool			_check_secret(std::string line, Contact& temp);
 		
 		std::string		_resize_content(std::string const str);
-		void			_search_contact(std::string user_index);
 		void			_list_table(void);
+		void			_search_contact(std::string user_index);
 
 	public:
 		PhoneBook(void);

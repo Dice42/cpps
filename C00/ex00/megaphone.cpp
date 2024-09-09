@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 15:37:04 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/08/25 18:10:26 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/08/19 23:45:11 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/08/23 23:30:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include <iostream>
+#include <cctype>
+ #include <clocale>
 
-int main (void)
+int main (int ac, char **av)
 {
-	PhoneBook 	phonebook;
-	phonebook.ft_start();
+	if (ac < 2)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else
+		for (int i = 1 ; av[i] ; i++)
+			for (int j = 0; av[i][j]; j++)
+				std::cout  << (char)std::toupper(av[i][j]);
+	std::cout << std::endl;
 	return (0);
 }

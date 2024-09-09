@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:17:44 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/09 12:23:06 by ++4              ###   ########.fr       */
+/*   Updated: 2024/09/09 16:24:47 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,25 @@ class Bureaucrat
 		int					_grade;
 	
 	protected:
-		class GradeTooHighException : std::exception {
-			public:
-				const char *what() const throw();
-		}
-		class GradeTooLowException	: std::exception {
+		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
-		}
-	
+		};
+		class GradeTooLowException	: public std::exception {
+			public:
+				const char* what() const throw();
+		};
+
 	public:
+		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat& other);
+		Bureaucrat& operator=(const Bureaucrat& rhs);
 		~Bureaucrat(void);
-		
-		void				GradeTooHighException();
-		void				GradeTooLowException();
-		const int			getGrade(void);
+	
+		void				decrementGrade();
+		void				incrementGrade();
+		int					getGrade(void);
 		const std::string	getName(void);
 		
 };
