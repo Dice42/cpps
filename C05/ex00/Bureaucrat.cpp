@@ -3,16 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:32:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/08 09:43:33 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:51:11 by ++4              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-int	const 			Bureaucrat::getGrade(void) {return _grade;};
+Bureaucrat::Bureaucrat(std::string name, int id) : _name(name)
+{
+    try
+    {
+        if (grade < 1)
+            throw GradeTooHighException;
+        if (grade > 150)
+            throw GradeTooLowException;
+        _grade = grade;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    if (id < 1 && id > 150)
+}
+int      			Bureaucrat::getGrade(void) {return _grade;};
 std::string	const	Bureaucrat::getName(void) {return _name;};
 
 void	Bureaucrat::GradeTooHighException()
