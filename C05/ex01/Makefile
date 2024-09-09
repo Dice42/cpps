@@ -6,12 +6,12 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/08 09:16:33 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/08 09:16:57 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/09 21:44:13 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = main.cpp Bureaucrat.cpp 
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
