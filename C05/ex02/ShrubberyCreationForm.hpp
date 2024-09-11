@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 14:30:40 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 20:28:10 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/10 19:21:37 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/11 20:25:03 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
+#include "AForm.hpp"
+#include <fstream>
 
-int main(void)
+class ShrubberyCreationForm : public AForm
 {
+	private:
+		std::string		target;
 		
-	return (0);
-}
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
+		~ShrubberyCreationForm();
+		
+};
+
+#endif

@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 14:30:40 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 20:28:10 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/10 19:29:00 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/11 20:25:19 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
+#include "AForm.hpp"
 
-int main(void)
+class RobotomyRequestForm : public AForm
 {
+	private:
+		std::string		target;
 		
-	return (0);
-}
+	public:
+		RobotomyRequestForm();
+		RobotomyRequestForm(const RobotomyRequestForm& other);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
+		~RobotomyRequestForm();
+};
+
+#endif

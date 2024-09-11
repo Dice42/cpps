@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 14:30:40 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 20:28:10 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/10 19:57:58 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/11 20:25:13 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
+#include "AForm.hpp"
 
-int main(void)
+class PresidentialPardonForm : public AForm
 {
+	private:
+		std::string		target;
 		
-	return (0);
-}
+	public:
+		PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm& other);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
+		~PresidentialPardonForm();
+};
+#endif
