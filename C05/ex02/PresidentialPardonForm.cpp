@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:10:41 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 18:16:18 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 07:22:57 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,8 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other){}
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& rhs){}
 PresidentialPardonForm::~PresidentialPardonForm(){}
+
+void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+    
+}

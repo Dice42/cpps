@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:57:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 20:25:13 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 07:21:37 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
 		~PresidentialPardonForm();
+
+		void		execute(Bureaucrat const & executor) const;
+
 };
 #endif

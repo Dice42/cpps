@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 08:52:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 18:36:14 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:13:55 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
  #define AFORM_HPP
 
 #include <iostream>
-#include <cstdbool>
 #include <iomanip>
 #include "Bureaucrat.hpp"
 
@@ -48,23 +47,22 @@
 	public:
 		AForm();
 		AForm(std::string name, const int gradeToSign, const int gradeToExecute);
-		// AForm(const AForm& other);
-		// AForm&	operator=(const AForm& rhs);
-		virtual ~AForm();
+		AForm(const AForm& other);
+		AForm&	operator=(const AForm& rhs);
+		~AForm();
 
-		/*getters*/
+		/* getters */
 		std::string		getName() const;
 		bool			getIsSigned() const;
 		int				getGradeToSign() const;
 		int				getGradeToExecute() const;
 
-	/* this function changes the form status to signed if the bureaucrat's grade is high enough or higher or equal to the required one
-		if a grade is to low throw gradetoolowexception*/
-		virtual void			beSigned(Bureaucrat& bureaucrat) = 0;
-		
-		/*If the form got signed,it will print something like: <bureaucrat> signed <form>
-		otherwise itll print something like : <bureaucrat> couldn’t sign <form> because <reason> */
-		virtual void			signForm(Bureaucrat& bureaucrat) = 0;
+		/* member function */
+		void				beSigned(Bureaucrat const & bureaucrat) const;
+		void				signForm(Bureaucrat const & bureaucrat);
+		void				beExecute(Bureaucrat const & bureaucrat) const;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
+		// virtual void		execute(Bureaucrat const & executor) = 0;
 	
  };
  

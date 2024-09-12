@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:17:44 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/09 22:19:00 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 10:35:53 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <stdexcept>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -41,8 +43,10 @@ class Bureaucrat
 	
 		void				decrementGrade();
 		void				incrementGrade();
-		int					getGrade(void);
-		const std::string	getName(void);
+		int					getGrade(void) const ;
+		const std::string	getName(void) const ;
+		
+		void				executeForm(AForm const & form);
 		
 };
 #endif

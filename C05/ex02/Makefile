@@ -6,12 +6,12 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/08 09:16:33 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/10 08:50:21 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/12 10:56:13 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:21:37 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/11 20:25:03 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:23:10 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
 		~ShrubberyCreationForm();
+
+		void		execute(Bureaucrat const & executor) const;
 		
 };
 

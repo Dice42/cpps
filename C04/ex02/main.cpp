@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:25:43 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/06 16:29:04 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/12 10:03:39 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include <iostream>
-
+#include <cstdlib>
 int main()
 {
 // 	const Animal* j = new Dog();
@@ -43,19 +43,25 @@ int main()
 	// 	tmp.printIdeas();
 	// 	basic.printIdeas();
 	// }
-	Dog *tmp;
-	tmp = new Dog;
-	std::cout << tmp->getType() << std::endl;
-	delete tmp;
-
-	// Animal *city(tmp);
-	// city->makeSound();
-	// tmp->makeSound();
+	// Dog *tmp;
+	// tmp = new Dog;
+	// std::cout << tmp->getType() << std::endl;
 	// delete tmp;
 
-	Cat cat;
-	cat.makeSound();
-	Cat copycat = cat;
-	copycat.makeSound();
+	// // Animal *city(tmp);
+	// // city->makeSound();
+	// // tmp->makeSound();
+	// // delete tmp;
+
+	// Cat cat;
+	// cat.makeSound();
+	// Cat copycat = cat;
+	// copycat.makeSound();
+	Dog d;
+	Dog tmp;
+	Animal *a = new Dog;
+	tmp = d;
+	std::cout << a->getType() << std::endl;
+	delete a;
 }
 
