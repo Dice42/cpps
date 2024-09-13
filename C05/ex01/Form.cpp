@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:13:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/10 14:57:07 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:49:13 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,6 @@ void				Form::beSigned(Bureaucrat& bureaucrat)
 	_isSigned = true;
 }
 
-void				Form::signForm(Bureaucrat& bureaucrat)
-{
-    try 
-	{
-		beSigned(bureaucrat); //this function throws an execption. if it did itll stop the execution and jump to catch
-		std::cout << bureaucrat.getName() << " signed " << _name << " Form." << std::endl;
-	}
-	catch (const Form::GradeTooLowException& e) {
-        std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " Form because "
-					<< YELLOW << e.what() << RESET << std::endl;
-    }
-}
-
 /*exception overloading*/
 const char* 	Form::GradeTooHighException::what() const throw() { return "Grade Too High!";}
 const char* 	Form::GradeTooLowException::what() const throw() { return "Grade Too Low";}
@@ -64,7 +51,7 @@ const char* 	Form::GradeTooLowException::what() const throw() { return "Grade To
 
 /*getters*/
 std::string	Form::getName() const { return _name;}
-bool				Form::getIsSigned() const { return _isSigned;}
+bool		Form::getIsSigned() const { return _isSigned;}
 int			Form::getGradeToSign() const { return _gradeToSign;}
 int			Form::getGradeToExecute() const { return _gradeToExecute;}
 

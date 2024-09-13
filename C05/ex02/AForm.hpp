@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 08:52:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/12 12:13:55 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:57:13 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@
 #define WHITE   "\033[37m"
 #define LCYAN	"\033[96m"
 
- class AForm
+class Bureaucrat;
+
+class AForm
  {
 	private:
 		const std::string		_name;
@@ -41,6 +43,10 @@
 				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
@@ -58,11 +64,9 @@
 		int				getGradeToExecute() const;
 
 		/* member function */
-		void				beSigned(Bureaucrat const & bureaucrat) const;
-		void				signForm(Bureaucrat const & bureaucrat);
+		void				beSigned(Bureaucrat const & bureaucrat);
 		void				beExecute(Bureaucrat const & bureaucrat) const;
 		virtual void		execute(Bureaucrat const & executor) const = 0;
-		// virtual void		execute(Bureaucrat const & executor) = 0;
 	
  };
  

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:12:16 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/12 12:37:42 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 22:05:09 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void		draw_tree(std::string target)
 {
-    try 
-    {
         std::ofstream	outfile;
         outfile.open((target + "_shrubbery").c_str());
+        if (outfile.fail())
+            throw 1;
         outfile << "                                      v .   ._, |_  ., \n";
         outfile << "                           `-._\\/  .  \\ /    |/  /  /  /   \n";
         outfile << "                                \\\\  _\\, y | \\//  \n";
@@ -35,28 +35,28 @@ void		draw_tree(std::string target)
         outfile << "                / ,      .    .   .    ,   . \\--------._  \n";
         outfile << "              / ,      .    .   .    ,   . \\--------._  \n";
         outfile.close();
-    } catch (std::exception& exception) {
-		std::cerr << exception.what() << std::endl;}
 }
 
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137){}
-// ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other){}
-// ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs){}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) 
+    : AForm("ShrubberyCreationForm", 145, 137), _target(target){}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+    : AForm(other.getName(), other.getGradeToSign(), other.getGradeToExecute()), _target(other._target){}
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
+{
+	if (this != &rhs)
+	{
+		AForm::operator=(rhs);
+        _target = rhs._target;
+	}
+    return (*this);
+}
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 
 
 void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    try 
-	{
-		beExecute(executor);
-        draw_tree(target);
-		std::cout << executor.getName() << RED << " executed " << RESET << "Shrubbery Creation Form." << std::endl;
-	}
-	catch (const AForm::GradeTooLowException& e) {
-        std::cout << executor.getName() << " couldn’t execute Shrubbery Creation Form because "
-					<< YELLOW << e.what() << RESET << std::endl;
-    }
+    beExecute(executor);
+    draw_tree(this->_target);
 }

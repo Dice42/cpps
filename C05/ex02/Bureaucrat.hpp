@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:17:44 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/12 10:35:53 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:00:01 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Bureaucrat
 		int					getGrade(void) const ;
 		const std::string	getName(void) const ;
 		
+		void				signForm(AForm & form);
 		void				executeForm(AForm const & form);
 		
 };

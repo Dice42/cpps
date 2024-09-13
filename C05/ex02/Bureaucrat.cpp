@@ -6,13 +6,14 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:32:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/12 10:36:16 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 21:27:28 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
+Bureaucrat::~Bureaucrat(){}
 Bureaucrat::Bureaucrat() : _name("no name"), _grade(1)
 {
 	std::cout << "bureaucrat constructor is called" << std::endl;
@@ -35,21 +36,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
 Bureaucrat&     Bureaucrat::operator=(const Bureaucrat&  rhs)
 {
     if (this != &rhs)
-    {
         _grade = rhs._grade;
-    }
     return (*this);
 }
 
-const char* 	Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return ("Grade Too High!");
-}
+const char* 	Bureaucrat::GradeTooHighException::what() const throw(){return ("Grade Too High!");}
 
-const char* 	Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("Grade Too Low!");
-}
+const char* 	Bureaucrat::GradeTooLowException::what() const throw(){return ("Grade Too Low!");}
 
 int      			Bureaucrat::getGrade(void) const {return _grade;};
 std::string	const	Bureaucrat::getName(void) const {return _name;};
@@ -68,18 +61,26 @@ void	Bureaucrat::decrementGrade()
 	_grade++;
 };
 
-void	Bureaucrat::executeForm(AForm const & form)
+void	Bureaucrat::signForm(AForm &form)
 {
-    if (_grade <= form.getGradeToExecute())
-        std::cout << _name << " executed " << form.getName() << std::endl;
-    else
-        //  std::cout << "ERROR: "<< _name << "Not allowed to exeute " << form.getName() << std::endl;
-        throw Bureaucrat::GradeTooLowException();
+	try{
+		form.beSigned(*this);
+		std::cout << _name << GREEN << " signed " << RESET << form.getName() << std::endl;
+	}catch(std::exception &e){
+		  std::cout << _name << " couldn’t sign " << _name << " Form because "
+					<< YELLOW << e.what() << RESET << std::endl;
+	}
 }
 
-Bureaucrat::~Bureaucrat()
+void	Bureaucrat::executeForm(AForm const & form)
 {
-	// std::cout << "bureaucrat destructor is called" << std::endl;
+    try {
+        form.execute(*this);
+        std::cout << _name << GREEN << " executed " << RESET << form.getName() << std::endl;
+    }catch(std::exception &e){
+        std::cout << _name << " couldn’t execute " << _name << " Form because "
+					<< YELLOW << e.what() << RESET << std::endl;
+    }
 }
 
 std::ostream&	operator<<(std::ostream& os, Bureaucrat& my)

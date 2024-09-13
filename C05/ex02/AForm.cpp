@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:13:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/12 12:36:59 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 21:37:52 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,25 @@ AForm&	AForm::operator=(const AForm& rhs)
 }
 
 /*member functions*/
-void				AForm::beSigned(Bureaucrat const & bureaucrat) const
+void		AForm::beSigned(Bureaucrat const & bureaucrat)
 {
 	if (bureaucrat.getGrade() > getGradeToSign())
 		throw GradeTooLowException();
+	_isSigned = true;
 }
 
-void				AForm::beExecute(Bureaucrat const & bureaucrat) const
+void		AForm::beExecute(Bureaucrat const & bureaucrat) const
 {
-	if (!getIsSigned() && (bureaucrat.getGrade() > getGradeToExecute()))
+	if (getIsSigned() == false)
+		throw FormNotSignedException();
+	if ((bureaucrat.getGrade() > getGradeToExecute()))
 		throw GradeTooLowException();
-}
-
-void				AForm::signForm(Bureaucrat const & bureaucrat) 
-{
-    try 
-	{
-		beSigned(bureaucrat); //this function throws an execption. if it did itll stop the execution and jump to catch
-		_isSigned = true;
-		std::cout << bureaucrat.getName() << " signed " << _name << " AForm." << std::endl;
-	}
-	catch (const AForm::GradeTooLowException& e) {
-        std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " AForm because "
-					<< YELLOW << e.what() << RESET << std::endl;
-    }
 }
 
 /*exception overloading*/
 const char* 	AForm::GradeTooHighException::what() const throw() { return "Grade Too High!";}
 const char* 	AForm::GradeTooLowException::what() const throw() { return "Grade Too Low";}
+const char* 	AForm::FormNotSignedException::what() const throw() { return "Form Not Signed";}
 
 
 /*getters*/
@@ -80,21 +70,18 @@ std::ostream&	operator<<(std::ostream& os, AForm& Aform)
 	std::string	str[4];
 
 	str[0] =  "Name"; str[1] = "Grade2sign"; str[2] = "Grade2Exec"; str[3] = "isSgned"; 
-	os <<  "---------------------------------------------\n|";
+	os <<  "╔═══════════════════════════════════════════════════════╗\n║";
 	for (int i = 0; i < 4; i++)
-		os << BLUE << std::setw(10)  << str[i] << RESET << "|";
-	os << std::endl;
-	os << "---------------------------------------------" << std::endl;
-
-	os << "|" << std::setw(10) << Aform.getName() << '|';
-	os << std::setw(10) << Aform.getGradeToSign() << '|';
-	os << std::setw(10) << Aform.getGradeToExecute() << '|';
+		os << BLUE << (i == 0 ? std::setw(22) : std::setw(10))  << str[i] << RESET << "║";
+		os << "\n╚═══════════════════════════════════════════════════════╝\n";
+	os << "║" << std::setw(21) << Aform.getName() << "║";
+	os << std::setw(10) << Aform.getGradeToSign() << "║";
+	os << std::setw(10) << Aform.getGradeToExecute() << "║";
 	os << ((Aform.getIsSigned() < 1) ? RED : GREEN) << std::setw(10) 
-		<< ((Aform.getIsSigned() < 1) ? "Not Sigend" : "Signed") << RESET << '|';
+		<< ((Aform.getIsSigned() < 1) ? "Not Sigend" : "Signed") << RESET << "║";
 	os << std::endl;
 
-	os << "---------------------------------------------" << std::endl;
+	os << "╚═══════════════════════════════════════════════════════╝" << std::endl;
 	return (os);
 }
-
 AForm::~AForm() {}

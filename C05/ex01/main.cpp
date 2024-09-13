@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:30:40 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/10 14:55:43 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:52:09 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(void)
 		std::cerr << e.what() << "\n";
 	}
 	std::cout << tax;
-	tax.signForm(bill);
+	bill.signForm(tax);
 
 	
 	try {
@@ -44,7 +44,7 @@ int main(void)
 		std::cerr << e.what() << "\n";
 	}
 	std::cout << tax;
-	tax.signForm(jack);
+	jack.signForm(tax);
 	
 	return (0);
 }

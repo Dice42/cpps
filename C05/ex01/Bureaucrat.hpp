@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:17:44 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/09 22:19:00 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:50:33 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <stdexcept>
+
+class Form;
 
 class Bureaucrat
 {
@@ -44,8 +46,9 @@ class Bureaucrat
 		int					getGrade(void);
 		const std::string	getName(void);
 		
+		void				signForm(Form & form);
 };
 #endif
 
 /* overload insertion operator */
-std::ostream&	operator<<(std::ostream& os, Bureaucrat& my);
+std::ostream&	operator<<(std::ostream& os, Bureaucrat& bureaucrat);

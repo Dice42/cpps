@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 08:52:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/10 14:15:01 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:48:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@
 #define WHITE   "\033[37m"
 #define LCYAN	"\033[96m"
 
- class Form
+class Bureaucrat;
+
+class Form
  {
 	private:
 		const std::string		_name;
@@ -54,17 +56,14 @@
 
 		/*getters*/
 		 std::string	getName() const;
-		bool				getIsSigned() const;
+		bool			getIsSigned() const;
 		 int			getGradeToSign() const;
 		 int			getGradeToExecute() const;
 
 	/* this function changes the form status to signed if the bureaucrat's grade is high enough or higher or equal to the required one
 		if a grade is to low throw gradetoolowexception*/
 		void				beSigned(Bureaucrat& bureaucrat);
-		/*If the form got signed,it will print something like: <bureaucrat> signed <form>
-		otherwise itll print something like : <bureaucrat> couldn’t sign <form> because <reason> */
-		void				signForm(Bureaucrat& bureaucrat);
-	
+		
  };
  
  #endif
