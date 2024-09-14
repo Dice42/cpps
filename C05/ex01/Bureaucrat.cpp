@@ -1,12 +1,12 @@
-/* ************************************************************************** */
+le/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:32:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 12:50:36 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 10:59:20 by ++4              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	Bureaucrat::signForm(Form &form)
 		form.beSigned(*this);
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	}catch(std::exception &e){
-		  std::cout << _name << " couldn’t sign " << _name << " Form because "
+		  std::cout << _name << " couldn’t sign " << form.getName() << " Form because "
 					<< YELLOW << e.what() << RESET << std::endl;
 	}
 }
