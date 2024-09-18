@@ -6,13 +6,12 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/08 09:16:33 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/13 21:24:25 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/14 19:03:35 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp \
-	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = main.cpp Intern.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp  
 
 OBJ = $(SRC:.cpp=.o)
 

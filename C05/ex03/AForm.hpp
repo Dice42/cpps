@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ++4 <mohammoh@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 08:52:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/14 10:54:06 by ++4              ###   ########.fr       */
+/*   Updated: 2024/09/14 19:52:07 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
  #ifndef AFORM_HPP
  #define AFORM_HPP
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -30,6 +29,7 @@
 #define LCYAN	"\033[96m"
 
 class Bureaucrat;
+class Intern;
 
 class AForm
  {
@@ -57,7 +57,7 @@ class AForm
 		AForm(std::string name, const int gradeToSign, const int gradeToExecute);
 		AForm(const AForm& other);
 		AForm&	operator=(const AForm& rhs);
-		~AForm();
+		virtual ~AForm();
 
 		/* getters */
 		std::string		getName() const;

@@ -6,10 +6,11 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:13:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 12:49:13 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:27:09 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Form::Form()

@@ -6,20 +6,26 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:54:54 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/04 14:06:12 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:47:46 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
+	using namespace std;
 /* constructor with string parameter */
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTrap()
 {
 	this->_name = name;
 	this->ClapTrap::_name = name + "_clap_name";
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
+
+	cout << "frag :" << FragTrap::_attackDamage << endl;
+	cout << "scav :" << ScavTrap::_attackDamage << endl;
+	cout << "clap :" << ClapTrap::_attackDamage << endl;
+	cout << "daim :" << _attackDamage << endl;
 	std::cout << RED << "DiamondTrap " << _name << " constructor is called" << RESET << std::endl;
 }
 

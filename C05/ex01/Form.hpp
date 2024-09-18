@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 08:52:56 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 12:48:50 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:26:56 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
  #define FORM_HPP
 
 #include <iostream>
-#include <cstdbool>
 #include <iomanip>
-#include "Bureaucrat.hpp"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"

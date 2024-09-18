@@ -6,13 +6,15 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:10:41 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 22:04:27 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:18:05 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::~PresidentialPardonForm(){}
+PresidentialPardonForm::PresidentialPardonForm()
+	: AForm("PresidentialPardonForm", 25, 5), _target("Default_Target") { }
 PresidentialPardonForm::PresidentialPardonForm(std::string target) 
 	: AForm("PresidentialPardonForm", 25, 5), _target(target){}
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)

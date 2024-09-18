@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:12:16 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 22:05:09 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:18:02 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void		draw_tree(std::string target)
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) 
     : AForm("ShrubberyCreationForm", 145, 137), _target(target){}
+ShrubberyCreationForm::ShrubberyCreationForm(void) 
+    : AForm("ShrubberyCreationForm", 145, 137), _target("Default_Target"){}
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
     : AForm(other.getName(), other.getGradeToSign(), other.getGradeToExecute()), _target(other._target){}
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)

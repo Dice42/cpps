@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:57:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 20:58:49 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:18:07 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PresidentialPardonForm : public AForm
 		std::string		_target;
 		
 	public:
+		PresidentialPardonForm(void);
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:30:40 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/13 21:36:14 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:59:22 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+#include "AForm.hpp"
 
 int main(void)
 {
@@ -75,5 +77,37 @@ int main(void)
 	rob.executeForm(form3);
 	std::cout << form3 << std::endl;
 	
+	std::cout<< "\n---------- Interns ----------\n" <<std::endl; 
+
+	try {
+			Intern intern;
+			AForm *f;
+			f = intern.makeForm("robotomy request", "home");
+			f->execute(Bureaucrat());
+			delete f;
+	}catch(std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
+
+	try {
+			Intern intern;
+			AForm *f;
+			f = intern.makeForm("presidential pardon", "home2");;
+			f->execute(Bureaucrat());
+			delete f;
+	}catch(std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
+
+	try {
+			Intern intern;
+			AForm *f;
+			f = intern.makeForm("shrubbery creation", "home3");
+			f->execute(Bureaucrat());
+			delete f;
+	}catch(std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }
+

@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:38:49 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/04 13:14:42 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/18 15:34:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_name = name;
-	this->_hitPoints = 100;
+	// this->_hitPoints = 100;
 	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	// this->_attackDamage = 20;
 	std::cout << YELLOW << "ScavTrap Constructor is called" << RESET << std::endl;
 }
 
@@ -26,9 +26,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	this->_name = "ScavTrap";
-	this->_hitPoints = 100;
+	// this->_hitPoints = 100;
 	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	// this->_attackDamage = 20;
 	std::cout << YELLOW << "ScavTrap Constructor is called" << RESET <<std::endl;
 }
 
@@ -41,9 +41,9 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
+		// this->_hitPoints = rhs._hitPoints;
 		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamage = rhs._attackDamage;	
+		// this->_attackDamage = rhs._attackDamage;	
 	}
 	return *this;
 }
