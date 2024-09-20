@@ -6,37 +6,43 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:12:00 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/18 22:19:12 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/20 22:07:08 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP 
 #define SCALARCONVERTER_HPP
 
-#include <string>
+#include <iostream>
 #include <cmath>
 #include <cstdlib>
-#include <iostream>
-
-/*this class doesn’t need to store anything at all, this class must not be instanciable by users*/
-//Except for char parameters, only the decimal notation will be used
+#include <limits>
+#include <string>
 
 class ScalarConverter
 {
 	private:
+		enum e_type{CHAR, INF, _NAN, INT, FLOAT, DOUBLE, INVALID};
+		
+		/*orthodics canonical*/
 		ScalarConverter();
-		~ScalarConverter(void){};
-		ScalarConverter(ScalarConverter const & other){*this = other;};
-		ScalarConverter& operator=(const ScalarConverter& rhs){return *this;};
+		~ScalarConverter(void);
+		ScalarConverter(ScalarConverter const & other);
+		ScalarConverter& operator=(const ScalarConverter& rhs);
+		
+		/*checks*/
+		static int _isValidInput(std::string input);
+		static int _check_type(long double value, char *end);
+
+
+		/*conversion*/
+		static void	_toInt(long double value);
+		static void	_toChar(long double value);
+		static void	_toFloat(long double value);
+		static void	_toDouble(long double value);
 
 	public:
-		void	toInt(std::string s);
-		void	toChar(std::string s);
-		void	toFloat(std::string s);
-		void	toDouble(std::string s);
-
-
-	static void		convert(std::string	string); //this function will output its value in the following (char, int, float, double)
+		static void		convert(std::string	input);
 };
 
 #endif

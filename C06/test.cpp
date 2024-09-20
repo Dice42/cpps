@@ -32,19 +32,20 @@ class parent					{public: virtual ~parent(void){}};
 class child1 : public parent	{};
 class child2 : public parent	{};
 
-// int main()
-// {
-// 	child1		a;
-// 	parent	*	b = &a; //implicit upcast
+int main()
+{
+	// child1		a;
+	parent	*b =  new child1() ; //implicit upcast
 
-// 	child1 *	c = dynamic_cast<child1 *>(b);
-// 	if (c == NULL)
-// 	{
-// 		cout << "comparison is not ok\n";
-// 	}
-// 	else
-// 		cout << "comparison is ok\n";
-
+	child2 	*c;
+	c = dynamic_cast<child2 *>(b);
+	if (c == NULL)
+	{
+		cout << "comparison is not ok\n";
+	}
+	else
+		cout << "comparison is ok\n";
+}
 // try
 // {
 // 	//in reference the 
@@ -61,7 +62,8 @@ class child2 : public parent	{};
 
 /* reinterpretation */
 // u need to know what your casting to because the complier will not give any issues
-//biascally the complier trust you
+// biascally the complier trust you
+
 // int main()
 // {
 // 	float	  a = 420.042f;
@@ -125,22 +127,22 @@ class child2 : public parent	{};
 
 /* Explicit Keyword*/
 
-class A {};
-class B {};
+// class A {};
+// class B {};
 
-class C {
+// class C {
 
-	public:
-							C( A const & _){return;}
-			explicit		C( B const & _){return;}
-};
+// 	public:
+// 							C( A const & _){return;}
+// 			explicit		C( B const & _){return;}
+// };
 
-void	f( C const & _){
-	return;
-}
+// void	f( C const & _){
+// 	return;
+// }
 
-int main()
-{
-	f ( A() );
-	f ( B() ); // this will not work becasue explicity we want to use that implicit constructor
-}
+// int main()
+// {
+// 	f ( A() );
+// 	f ( B() ); // this will not work becasue explicity we want to use that implicit constructor
+// }

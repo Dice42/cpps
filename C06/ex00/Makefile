@@ -6,11 +6,11 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/04 20:14:39 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/07 18:04:14 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/19 14:56:16 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,9 +18,9 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = materia
+NAME = convert
 
 all: $(NAME)
 
@@ -28,10 +28,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 run: $(NAME)
-	./$(NAME)
-	 
-valgrind: $(NAME)
-	valgrind  --leak-check=full --show-leak-kinds=all ./$(NAME) 
+	./$(NAME) 
 
 clean:
 	$(RM) $(OBJ)
@@ -44,4 +41,4 @@ re: $(NAME)
 	make fclean
 	make all
 
-.PHONY: all run valgrind clean fclean re
+.PHONY: all run clean fclean re

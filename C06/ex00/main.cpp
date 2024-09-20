@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:58:58 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/07 15:40:27 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/19 08:23:41 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/19 08:51:28 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#include "ScalarConverter.hpp"
 
-#include "AMateria.hpp"
-
-class Cure : public AMateria
+int main(int ac, char **av)
 {
-	public:
-		Cure(void);
-		~Cure(void);
-		Cure(const Cure& other);
-
-		Cure&		operator=(const Cure& rhs);
-		AMateria* 	clone() const;
-		void		use(ICharacter& target);
-};
-#endif
+	if (ac != 2)
+		return (std::cout << "Error: wrong input\n", 0);
+	ScalarConverter::convert(av[1]);
+}

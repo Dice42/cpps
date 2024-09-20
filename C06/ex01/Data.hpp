@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 20:23:49 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/07 15:53:45 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/19 16:25:16 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/19 16:27:07 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
 
-#include "ICharacter.hpp"
+#ifndef DATA
+#define DATA
 
-class Character : public ICharacter
+#include <iostream>
+
+class Data
 {
-	protected:
-		AMateria	*m[4];
-		std::string	_name;
-
 	public:
-		Character(std::string name);
-		~Character(void);
-		Character(const Character& other);
+		Data();
+		Data(const Data & other);
+		Data& operator=(const Data & rhs);
+		~Data();
 		
-		Character&	operator=(const Character& rhs);
-		std::string const & getName() const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);	
 };
 
 #endif
