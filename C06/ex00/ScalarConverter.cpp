@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:36:36 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/21 20:12:32 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:48:19 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void	ScalarConverter::_toDouble(long double value)
 		std::cout << ".0" << std::endl;
 }
 
-/* conversion */
 void 	ScalarConverter::_fromChar(std::string input)
 {
 	int		value;
@@ -140,7 +139,6 @@ void 	ScalarConverter::_fromDouble(std::string input)
 		std::cout << ".0" << std::endl;
 }
 
-
 void ScalarConverter::_isSpecial(std::string input)
 {
 	long double value;
@@ -177,17 +175,14 @@ int		ScalarConverter::_checkType(std::string input)
 	else if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
 		&& (input.find('.') == std::string::npos))
 		return INT;
-	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
+	else if ((value >= -std::numeric_limits<float>::max() && value <= std::numeric_limits<float>::max())
 				&& (input.find('.') != std::string::npos) && (static_cast<std::string>(end).size() == 1 && end[0] == 'f'))
 		return FLOAT;
-	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
+	else if ((value >= -std::numeric_limits<double>::max() && value <= std::numeric_limits<double>::max())
 				&& (input.find('.') != std::string::npos) && end[0] == '\0')
 		return DOUBLE;
 	return  INVALID;
 }
-
-
-/****************************************** CONVERT ********************************************/
 
 void	ScalarConverter::convert(std::string input)
 {

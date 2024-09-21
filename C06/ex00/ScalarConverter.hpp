@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:12:00 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/21 20:09:28 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:47:48 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ class ScalarConverter
 		ScalarConverter(ScalarConverter const & other);
 		ScalarConverter& operator=(const ScalarConverter& rhs);
 		
-		/*checks*/
+		/*check*/
 		static int _checkType(std::string input);
 
-		
 		/*conversion*/
 		static void _fromChar(std::string input);
 		static void _fromInt(std::string input);
