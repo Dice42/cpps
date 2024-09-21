@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:36:36 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/20 22:06:56 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:12:32 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,83 +88,124 @@ void	ScalarConverter::_toDouble(long double value)
 		std::cout << ".0" << std::endl;
 }
 
-
-//first we check if its v
-int		ScalarConverter::_check_type(long double value, char *end)
+/* conversion */
+void 	ScalarConverter::_fromChar(std::string input)
 {
-	//check int
+	int		value;
+
+	value = std::stoi(input.c_str());
+	std::cout << "char  : " << static_cast<char>(value) << std::endl;
+	std::cout << "int   : " << value << std::endl;
+	std::cout << "float : " << static_cast<float>(value) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
 }
 
-// we can check if its flaot first than double 
-int		ScalarConverter::_isValidInput(std::string input)
+void 	ScalarConverter::_fromInt(std::string input)
 {
-	long double		value;
-	char			*end;
+	int		value;
 
-	value = std::strtold(input.c_str(), &end);
-	if (input.length() == 1 && !std::isprint(input[0])) //i dont need to check for char because i only need to convert numbers and strdold will return it 
-		return CHAR;
-	else if (input.c_str() == end)
-		return INVALID;
-	else if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
-		&& (input.find('.') == std::string::npos))
-		return INT;
-	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
-				&& (input.find('.') != std::string::npos) && (end[0] == 'f'))
-		return FLOAT;
-	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
-				&& (input.find('.') != std::string::npos))
-		return DOUBLE;
-	
-	
+	value = std::stoi(input.c_str());
+	_toChar(value);
+	std::cout << "int   : " << value << std::endl;
+	std::cout << "float : " << static_cast<float>(value) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
+}
+
+void 	ScalarConverter::_fromFloat(std::string input)
+{
+	float	value;
+
+	value = std::stof(input.c_str());
+	_toChar(value);
+	_toInt(value);
+	std::cout << "float : " << value;
+	if (static_cast<int>(value) == value)
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(value);
+	if (static_cast<int>(value) == value)
+		std::cout << ".0" << std::endl;
+}
+
+void 	ScalarConverter::_fromDouble(std::string input)
+{
+	double	value;
+
+	value = std::stod(input.c_str());
+	_toChar(value);
+	_toInt(value);
+	_toFloat(value);
+	std::cout << "double: " << value;
+	if (static_cast<int>(value) == value)
+		std::cout << ".0" << std::endl;
 }
 
 
-/****************************************** CHECKS ********************************************/
-
-void	ScalarConverter::convert(std::string input)
+void ScalarConverter::_isSpecial(std::string input)
 {
+	long double value;
 
-		if (_isValidInput(input) == INVALID)
-			return;
-	
-	/*
-		first i need to check the input and confirm its type 
-		i could i have something like array of enum
-		
-		if check if double
-			must be longer than a int and also contains . and a number after it\
-
-		else if check if float
-			 must contain . and a numbers and an f after it
-
-		else if check if int
-				must be a number and be within the integer parameters
-
-		else if check if char
-				must be one character and 
-		else
-			its impossible for all 
-
-	*/
-	long double	value;
-	char		*end;
-
-	value = std::strtold(input.c_str(), &end);
-	//check the type of the input if and then convert it to its actual type then we need to cast it to the other types
-	if (input.c_str() == end)
-	{
-		std::cout << "char	: impossible" << std::endl; 
-		std::cout << "int	: impossible" << std::endl; 
-		std::cout << "float : impossible" << std::endl; 
-		std::cout << "double: impossible" << std::endl;
-		return ;
-	}
+	value = std::strtold(input.c_str(), NULL);
 	_toChar(value);
 	_toInt(value);
 	_toFloat(value);
 	_toDouble(value);
 }
 
+void	ScalarConverter::_impossible(void)
+{
+	std::cout << "char  : impossible" << std::endl; 
+	std::cout << "int   : impossible" << std::endl; 
+	std::cout << "float : impossible" << std::endl; 
+	std::cout << "double: impossible" << std::endl;
+}
 
-// ill use stoi, stof , stod if avialable
+int		ScalarConverter::_checkType(std::string input)
+{
+	long double		value;
+	char			*end;
+
+	value = std::strtold(input.c_str(), &end);
+	if (input.length() == 1 && std::isprint(input[0]))
+		return CHAR;
+	else if (input.c_str() == end)
+		return INVALID;
+	else if (std::isinf(value))
+		return INF;
+	else if (std::isnan(value))
+		return _NAN;
+	else if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
+		&& (input.find('.') == std::string::npos))
+		return INT;
+	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
+				&& (input.find('.') != std::string::npos) && (static_cast<std::string>(end).size() == 1 && end[0] == 'f'))
+		return FLOAT;
+	else if ((value >= std::numeric_limits<float>::min() && value <= std::numeric_limits<float>::max())
+				&& (input.find('.') != std::string::npos) && end[0] == '\0')
+		return DOUBLE;
+	return  INVALID;
+}
+
+
+/****************************************** CONVERT ********************************************/
+
+void	ScalarConverter::convert(std::string input)
+{
+	switch (_checkType(input))
+	{
+		case CHAR: _fromChar(input);
+			break;
+		case INT: _fromInt(input);
+			break;
+		case FLOAT: _fromFloat(input);
+			break;
+		case DOUBLE: _fromDouble(input);
+			break;
+		case INF: _isSpecial(input);
+			break;
+		case _NAN: _isSpecial(input);
+			break;
+		case INVALID: _impossible();
+			break;
+	}
+}

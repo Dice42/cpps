@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:52:02 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/20 22:17:05 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/21 16:46:00 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int main (int ac, char **av)
 
 	value = std::strtold(av[1], &end);
 	
-	if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
+	if (static_cast<std::string>(av[1]).length() == 1 && std::isprint(av[1][0])) //i dont need to check for char because i only need to convert numbers and strdold will return it 
+		std::cout << "char\n";
+	else if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
 		&& (static_cast<std::string>(av[1]).find('.') == std::string::npos))
 		std::cout << "integer" << std::endl;
 	else if ((value >= -std::numeric_limits<float>::max() && value <= std::numeric_limits<float>::max())
