@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:12:00 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/21 20:47:48 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/22 12:14:39 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,19 @@
 #include <limits>
 #include <string>
 
+
+#define RESET		"\033[0m"
+#define BOLD		"\033[1m"
+#define UNDERLINE	"\033[21m"
+#define RED    		"\033[31m"
+#define GREEN  		"\033[32m"
+#define YELLOW		"\033[33m"
+#define BLUE		"\033[34m"
+
 class ScalarConverter
 {
 	private:
-		enum e_type{CHAR, INT, FLOAT, DOUBLE, INF, _NAN, INVALID};
+		enum e_type{CHAR, INT, FLOAT, DOUBLE, SPECIAL, INVALID, NOTAPPLICABLE};
 		
 		/*orthodics canonical*/
 		ScalarConverter();
@@ -40,6 +49,7 @@ class ScalarConverter
 		static void _fromDouble(std::string input);
 		static void _isSpecial(std::string input);
 		static void	_impossible(void);
+		static void	_notApplicable(void);
 
 		static void	_toInt(long double value);
 		static void	_toChar(long double value);

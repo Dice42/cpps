@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:36:36 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/21 20:48:19 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/22 17:22:24 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,12 @@ void	ScalarConverter::_toDouble(long double value)
 
 void 	ScalarConverter::_fromChar(std::string input)
 {
-	int		value;
+	int		value = input.c_str()[0];
 
-	value = std::stoi(input.c_str());
-	std::cout << "char  : " << static_cast<char>(value) << std::endl;
+	if (std::isprint(value))
+		std::cout << "char : '" << static_cast<char>(value)<< "'" << std::endl;
+	else
+		std::cout << "char : Non displayable" << std::endl;
 	std::cout << "int   : " << value << std::endl;
 	std::cout << "float : " << static_cast<float>(value) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
@@ -103,7 +105,7 @@ void 	ScalarConverter::_fromInt(std::string input)
 {
 	int		value;
 
-	value = std::stoi(input.c_str());
+	value = std::atoi(input.c_str());
 	_toChar(value);
 	std::cout << "int   : " << value << std::endl;
 	std::cout << "float : " << static_cast<float>(value) << ".0f" << std::endl;
@@ -114,7 +116,7 @@ void 	ScalarConverter::_fromFloat(std::string input)
 {
 	float	value;
 
-	value = std::stof(input.c_str());
+	value = std::strtof(input.c_str(), NULL);
 	_toChar(value);
 	_toInt(value);
 	std::cout << "float : " << value;
@@ -130,7 +132,7 @@ void 	ScalarConverter::_fromDouble(std::string input)
 {
 	double	value;
 
-	value = std::stod(input.c_str());
+	value = std::strtod(input.c_str(), NULL);
 	_toChar(value);
 	_toInt(value);
 	_toFloat(value);
@@ -139,7 +141,7 @@ void 	ScalarConverter::_fromDouble(std::string input)
 		std::cout << ".0" << std::endl;
 }
 
-void ScalarConverter::_isSpecial(std::string input)
+void	ScalarConverter::_isSpecial(std::string input)
 {
 	long double value;
 
@@ -158,20 +160,24 @@ void	ScalarConverter::_impossible(void)
 	std::cout << "double: impossible" << std::endl;
 }
 
+void	ScalarConverter::_notApplicable(void)
+{
+	std::cout << YELLOW << "ERROR: " << RESET << BOLD << UNDERLINE 
+			<<"input entered is not applicable or overflowed from its type\n" << RESET;
+}
+
 int		ScalarConverter::_checkType(std::string input)
 {
 	long double		value;
 	char			*end;
 
 	value = std::strtold(input.c_str(), &end);
-	if (input.length() == 1 && std::isprint(input[0]))
+	if (input.length() == 1 && std::isprint(input[0]) && static_cast<std::string>(end).size() == 1)
 		return CHAR;
 	else if (input.c_str() == end)
 		return INVALID;
-	else if (std::isinf(value))
-		return INF;
-	else if (std::isnan(value))
-		return _NAN;
+	else if (std::isinf(value) || std::isnan(value))
+		return SPECIAL;
 	else if ((value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max()) 
 		&& (input.find('.') == std::string::npos))
 		return INT;
@@ -181,7 +187,7 @@ int		ScalarConverter::_checkType(std::string input)
 	else if ((value >= -std::numeric_limits<double>::max() && value <= std::numeric_limits<double>::max())
 				&& (input.find('.') != std::string::npos) && end[0] == '\0')
 		return DOUBLE;
-	return  INVALID;
+	return  NOTAPPLICABLE;
 }
 
 void	ScalarConverter::convert(std::string input)
@@ -196,11 +202,11 @@ void	ScalarConverter::convert(std::string input)
 			break;
 		case DOUBLE: _fromDouble(input);
 			break;
-		case INF: _isSpecial(input);
-			break;
-		case _NAN: _isSpecial(input);
+		case SPECIAL: _isSpecial(input);
 			break;
 		case INVALID: _impossible();
+			break;
+		case NOTAPPLICABLE: _notApplicable();
 			break;
 	}
 }

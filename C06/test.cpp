@@ -32,20 +32,20 @@ class parent					{public: virtual ~parent(void){}};
 class child1 : public parent	{};
 class child2 : public parent	{};
 
-int main()
-{
-	// child1		a;
-	parent	*b =  new child1() ; //implicit upcast
+// int main()
+// {
+// 	// child1		a;
+// 	parent	*b =  new child1() ; //implicit upcast
 
-	child2 	*c;
-	c = dynamic_cast<child2 *>(b);
-	if (c == NULL)
-	{
-		cout << "comparison is not ok\n";
-	}
-	else
-		cout << "comparison is ok\n";
-}
+// 	child2 	*c;
+// 	c = dynamic_cast<child2 *>(b);
+// 	if (c == NULL)
+// 	{
+// 		cout << "comparison is not ok\n";
+// 	}
+// 	else
+// 		cout << "comparison is ok\n";
+// }
 // try
 // {
 // 	//in reference the 
@@ -59,7 +59,6 @@ int main()
 // 	cout << b << endl;
 // 	cout << c << endl;
 // }
-
 /* reinterpretation */
 // u need to know what your casting to because the complier will not give any issues
 // biascally the complier trust you
