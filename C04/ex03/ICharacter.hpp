@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/06 16:47:42 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/07 16:23:28 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-#include <iostream>
-#include <cstdint>
+#include "AMateria.hpp"
 
-// typedef unsigned long uintptr_t;
+class AMateria;
 
-struct Data
+class ICharacter
 {
-	std::string	name;
-	int			age;
-};
-
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		virtual ~ICharacter() {/*std::cout << "ICharacter destructor is called!" << std::endl;*/}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;	
 };
+
 #endif

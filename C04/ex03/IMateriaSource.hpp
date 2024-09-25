@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/07 12:15:51 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/07 16:23:39 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
-#include <iostream>
-#include <cstdint>
+#include "AMateria.hpp"
 
-// typedef unsigned long uintptr_t;
+class AMateria;
 
-struct Data
+class IMateriaSource
 {
-	std::string	name;
-	int			age;
-};
-
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		virtual ~IMateriaSource() {/*std::cout << "IMateriaSource destructor is called!" << std::endl;*/}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 #endif
+

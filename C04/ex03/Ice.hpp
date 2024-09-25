@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/06 17:01:49 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/07 18:05:59 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include <iostream>
-#include <cstdint>
+#include "AMateria.hpp"
 
-// typedef unsigned long uintptr_t;
-
-struct Data
+class Ice : public AMateria 
 {
-	std::string	name;
-	int			age;
-};
-
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		Ice(void);
+		~Ice(void);
+		Ice(const Ice& other);
+
+		Ice&		operator=(const Ice& rhs);
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
 };
 #endif

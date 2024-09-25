@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/25 15:49:21 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/25 19:17:32 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef EASYFIND_TPP
+#define EASYFIND_TPP
+#include "easyfind.hpp"
 
-#include <iostream>
-#include <cstdint>
 
-// typedef unsigned long uintptr_t;
-
-struct Data
+template <class T>
+void	easyfind(T param, int i)
 {
-	std::string	name;
-	int			age;
-};
+	std::vector<int>::iterator itr;
+	for (itr = param.begin(); itr < param.end(); itr++)
+	{
+			if (*itr == i)
+			{
+				std::cout << GREEN << "found: " << RESET << *itr 
+						<< " at index: " << (itr - param.begin()) << std::endl;
+				return;
+			}
+	}
+	throw NotFound();
+}
 
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
-	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
-};
 #endif

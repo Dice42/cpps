@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/25 15:46:47 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/25 19:17:59 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
-#include <cstdint>
+#include <exception>
+#include <vector>
 
-// typedef unsigned long uintptr_t;
+#define RESET		"\033[0m"
+#define GREEN  		"\033[32m"
 
-struct Data
-{
-	std::string	name;
-	int			age;
-};
+template <class T>
+void	easyfind(T param, int i);
 
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
+class NotFound : public std::exception{
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		const char* what() const throw() {return ("Not found");};				
 };
+
+#include "easyfind.tpp"
 #endif

@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/07 12:14:54 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/07 15:51:32 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
 
-#include <iostream>
-#include <cstdint>
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-// typedef unsigned long uintptr_t;
+#include "IMateriaSource.hpp"
 
-struct Data
+class MateriaSource : public IMateriaSource
 {
-	std::string	name;
-	int			age;
-};
-
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
+	protected:
+		AMateria		*m[4];
+		int				_count;
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		MateriaSource(void);
+		~MateriaSource(void);
+		MateriaSource(const MateriaSource& other);
+
+		MateriaSource&	operator=(const MateriaSource& rhs);
+		void 			learnMateria(AMateria*);
+		AMateria*		createMateria(std::string const & type);
 };
 #endif

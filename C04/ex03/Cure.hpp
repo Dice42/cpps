@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/06 16:58:58 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/07 15:40:27 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#include <iostream>
-#include <cstdint>
+#include "AMateria.hpp"
 
-// typedef unsigned long uintptr_t;
-
-struct Data
+class Cure : public AMateria
 {
-	std::string	name;
-	int			age;
-};
-
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
-
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
+		Cure(void);
+		~Cure(void);
+		Cure(const Cure& other);
+
+		Cure&		operator=(const Cure& rhs);
+		AMateria* 	clone() const;
+		void		use(ICharacter& target);
 };
 #endif

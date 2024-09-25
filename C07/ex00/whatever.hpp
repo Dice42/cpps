@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 15:24:34 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/24 21:16:42 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/23 09:31:59 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/24 19:02:55 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
 #include <iostream>
-#include <cstdint>
 
-// typedef unsigned long uintptr_t;
-
-struct Data
+template <class T>
+void	swap(T& x, T& y)
 {
-	std::string	name;
-	int			age;
-};
+	T tmp = x;
+	
+	x = y;
+	y = tmp;
+}
 
-class Serializer
+template <class T>
+T		max(T const x, T const y)
 {
-	private:
-		Serializer();
-		Serializer(const Serializer & other);
-		Serializer& operator=(const Serializer & rhs);
-		~Serializer();
+	return (x > y ? x : y);
+}
 
-	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data*	 deserialize(uintptr_t raw);
-};
+template <class T>
+T		min(T const x, T const y)
+{
+	return (x < y ? x : y);
+}
+
 #endif
