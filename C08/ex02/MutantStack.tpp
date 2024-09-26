@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 15:46:47 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/26 13:20:19 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/26 21:58:41 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/26 21:59:44 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
 
-#include <iostream>
-#include <exception>
-#include <vector>
-#include <algorithm>
+#ifndef MUTANTSTACK_TPP
+#define MUTANTSTACK_TPP
+
+#include "MutantStack.hpp"
 
 
-#define RESET		"\033[0m"
-#define GREEN  		"\033[32m"
 
-template <class T>
-void	easyfind(T param, int i);
-
-class NotFound : public std::exception{
-	public:
-		const char* what() const throw() {return ("Not found");};				
-};
-
-#include "easyfind.tpp"
 #endif

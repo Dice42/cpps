@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 21:30:22 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/25 21:31:04 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/09/26 21:51:32 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = Span
 

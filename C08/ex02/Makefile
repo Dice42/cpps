@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/23 09:30:06 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/26 20:18:51 by mohammoh         ###   ########.fr        #
+#    Created: 2024/09/26 21:57:23 by mohammoh          #+#    #+#              #
+#    Updated: 2024/09/26 21:57:52 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =  main.cpp
+SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,9 +18,9 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = iter
+NAME = MutantStack
 
 all: $(NAME)
 

@@ -74,6 +74,7 @@
 		"__tree": "cpp",
 		"forward_list": "cpp",
 		"list": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"numeric": "cpp"
 	}
 }
