@@ -25,10 +25,10 @@ class Intern
         AForm*  createShrubberyCreationForm(std::string targetName);
         AForm*  createPresidentialPardonForm(std::string targetName);
     protected:
-		class FormDoesntExsitsException : public std::exception {
-			public:
-				const char* what() const throw();
-		};
+      class FormDoesntExsitsException : public std::exception {
+      public:
+         const char* what() const throw();
+};
     public:
         Intern();
         ~Intern();

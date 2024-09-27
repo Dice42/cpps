@@ -6,19 +6,20 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:49:21 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/26 13:20:43 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:49:24 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_TPP
 #define EASYFIND_TPP
 #include "easyfind.hpp"
+#include "iterator"
 
-
-template <class T>
+template <typename T>
 void	easyfind(T param, int i)
 {
-	std::vector<int>::iterator itr;
+	typename T::iterator itr;
+	
 	for (itr = param.begin(); itr < param.end(); itr++)
 	{
 		if (*itr == i)
