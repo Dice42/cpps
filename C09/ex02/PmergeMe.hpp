@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 20:19:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/28 20:44:56 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/28 17:03:34 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/09/28 17:03:50 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef PMERGEME
+#define PMERGEME
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Dog : public Animal
+class PmergeMe
 {
-	private:
-		Brain	*brain;
-		
-	public:
-		Dog(void);
-		~Dog(void);
-		Dog(const Dog& other);
-		
-		Dog&			operator=(const Dog& rhs);
-		void			makeSound(void) const;
-		void			printIdeas(void);
-		std::string		getType(void) const;
 	
 };
-
 #endif

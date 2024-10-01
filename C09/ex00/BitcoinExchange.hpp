@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 20:19:19 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/09/28 20:44:56 by mohammoh         ###   ########.fr       */
+/*   Created: 2024/09/28 17:02:15 by mohammoh          #+#    #+#             */
+/*   Updated: 2024/10/01 14:06:32 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BITCOINEXCHANGE
+#define BITCOINEXCHANGE
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cstdlib>
 
-class Dog : public Animal
+class BitcoinExchange
 {
 	private:
-		Brain	*brain;
-		
+		std::vector<std::string>	file_DB;						
 	public:
-		Dog(void);
-		~Dog(void);
-		Dog(const Dog& other);
-		
-		Dog&			operator=(const Dog& rhs);
-		void			makeSound(void) const;
-		void			printIdeas(void);
-		std::string		getType(void) const;
+	
+		BitcoinExchange();
+		BitcoinExchange(std::string file);
+		~BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange& other);
+		BitcoinExchange&	operator=(const BitcoinExchange& rhs);
 	
 };
-
 #endif

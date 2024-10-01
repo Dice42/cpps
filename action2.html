@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Plan Timeline - Mohammed Disougi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4b79a1;
+            background-image: linear-gradient(315deg, #4b79a1 0%, #283e51 74%);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #4b79a1;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: white;
+            border: 4px solid #4b79a1;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #4b79a1;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #4b79a1;
+        }
+
+        .timeline-item.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #4b79a1;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #4b79a1 transparent transparent;
+        }
+
+        .timeline-item-content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item h4 {
+            margin-top: 0;
+            color: #4b79a1;
+        }
+
+        .timeline-item p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #283e51;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+            }
+
+            .timeline-item.right::before,
+            .timeline-item.left::before {
+                left: 60px !important;
+                border: none;
+            }
+
+            .timeline::after {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Action Plan Timeline: Mohammed Disougi</h1>
+        <p>Achieving Excellence in Event Management and Software Development</p>
+    </header>
+
+    <main>
+        <div class="timeline">
+
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>Complete Software Development Projects at 42 Abu Dhabi</h4>
+                    <p><strong>Timeline:</strong> 6 months</p>
+                    <p><strong>Actions:</strong> Focus on core modules, peer-to-peer feedback, finish projects in Python and control systems.</p>
+                    <p><strong>Resources:</strong> Peer feedback, tutorials, 42 Abu Dhabi resources.</p>
+                    <p><strong>Outcome:</strong> Enhanced programming skills in software development.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h4>Expand Event Management Portfolio</h4>
+                    <p><strong>Timeline:</strong> 6 months</p>
+                    <p><strong>Actions:</strong> Lead operations for two major events, apply automation tools, develop relationships with stakeholders.</p>
+                    <p><strong>Resources:</strong> Event management tools, CRM systems, industry contacts.</p>
+                    <p><strong>Outcome:</strong> Strengthened project management and operational skills.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>Improve Leadership in Technical Environments</h4>
+                    <p><strong>Timeline:</strong> 3-6 months</p>
+                    <p><strong>Actions:</strong> Mentor peers, take leadership roles in 42 Abu Dhabi projects.</p>
+                    <p><strong>Resources:</strong> Leadership resources, mentorship tools, 42 Abu Dhabi projects.</p>
+                    <p><strong>Outcome:</strong> Enhanced leadership skills in technical and event contexts.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h4>Establish Event Management & Technology Company</h4>
+                    <p><strong>Timeline:</strong> 1-2 years</p>
+                    <p><strong>Actions:</strong> Finalize business model, secure funding, hire team.</p>
+                    <p><strong>Resources:</strong> Market research, investor connections, recruitment platforms.</p>
+                    <p><strong>Outcome:</strong> Launched a successful company integrating technology into event management.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 5 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>Develop Entrepreneurial Skills</h4>
+                    <p><strong>Timeline:</strong> 1-2 years</p>
+                    <p><strong>Actions:</strong> Enroll in business management courses, network with entrepreneurs, attend conferences.</p>
+                    <p><strong>Resources:</strong> Online business courses, industry events, mentorship programs.</p>
+                    <p><strong>Outcome:</strong> Gained practical experience in business management and entrepreneurship.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 6 -->
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h4>Monitor Progress on All Projects</h4>
+                    <p><strong>Timeline:</strong> Ongoing (quarterly reviews)</p>
+                    <p><strong>Actions:</strong> Set review dates, adjust goals based on feedback.</p>
+                    <p><strong>Resources:</strong> Project management software, feedback from clients and peers.</p>
+                    <p><strong>Outcome:</strong> Continuous improvement and alignment with long-term objectives.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 7 -->
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>Networking & Mentorship</h4>
+                    <p><strong>Timeline:</strong> Ongoing</p>
+                    <p><strong>Actions:</strong> Attend events, connect with mentors, grow professional network.</p>
+                    <p><strong>Resources:</strong> Industry events, LinkedIn, 42 Abu Dhabi network.</p>
+                    <p><strong>Outcome:</strong> Strengthened professional relationships and industry presence.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mohammed Disougi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
