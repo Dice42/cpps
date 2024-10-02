@@ -6,74 +6,94 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 12:45:05 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/10/01 22:15:36 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:02:59 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-std::pair<std::vector<int>, std::vector<std::string> >	csv_data(std::fstream& file)
-{
-	std::vector<std::string>							dates;
-	std::vector<int>								 	exchange_rate;
-	std::string		 									line;
+// std::pair<std::vector<int>, std::vector<std::string> >	csv_data(std::fstream& file)
+// {
+// 	std::vector<std::string>							dates;
+// 	std::vector<int>								 	exchange_rate;
+// 	std::string		 									line;
 
-	std::getline(file, line);
-	while(std::getline(file, line))
-	{
-		std::string date = line.substr(0, line.find(","));
-		double value = std::strtod(line.substr(line.find(",")).c_str() + 1, NULL);
-		exchange_rate.push_back(static_cast<int>(value));
-		dates.push_back(date);
-	}
-	std::pair<std::vector<int>, std::vector<std::string> >	btc_data(exchange_rate, dates);
-	return (btc_data);
+// 	std::getline(file, line);
+// 	while(std::getline(file, line))
+// 	{
+// 		std::string date = line.substr(0, line.find(","));
+// 		double value = std::strtod(line.substr(line.find(",")).c_str() + 1, NULL);
+// 		exchange_rate.push_back(static_cast<int>(value));
+// 		dates.push_back(date);
+// 	}
+// 	std::pair<std::vector<int>, std::vector<std::string> >	btc_data(exchange_rate, dates);
+// 	return (btc_data);
+// }
+
+void		check_line(std::string line)
+{
+	std::string		date;
+	int				year;
+	int				month;
+	int				day;
+
+	date = 	line.substr(0, line.find(" |"));
+	if (date.size() != 10)
+		return (std::cout << "Wrong date! >>" << date << std::endl, void());
+	
+	year = std::atoi(date.substr(0, date.find("-")).c_str());
+	month = std::atoi(date.substr(date.find("-")+1, date.find_last_of("-")).c_str()); 
+	day = std::atoi(date.substr(date.find_last_of("-")+1).c_str());
+	
+
+	/*leap year in feb */
+	if ((year < 2009 || year > 2024) || (month < 0 || month > 12) || ( day < 0 || day > 31))
+		return (std::cout << "Wrong date / bad input! >> " << date << std::endl, void());
+
+	std::string		values;
+	double			value;
+	char			*end;
+
+	values = line.substr(line.find("| ") + 1);
+	value = std::strtod(values.c_str(), &end);
+	
+	if(end[0] != '\0')
+		std::cout << "error: bad value\n";
+
+	if (value < 0)
+		std::cout << "Error: not a positive number.\n";
+	else if (value > 1000)
+		std::cout << "Error: not a positive number\n";
+	else
+		/*i want to multiply the */
+		
+	
 }
 
 int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		std::fstream									csv("data.csv");
+
+		/*load data base */
+		BitcoinExchange									btc("data.csv");
 		std::fstream									database(av[1]);
 
-		if(csv.fail() || database.fail())
+		if(database.fail())
 			return(std::cout << "Error: in opening the file\n", 0);
-		std::pair<std::vector<int>, std::vector<std::string> > btc = csv_data(csv);
+		
+		// std::pair<std::vector<int>, std::vector<std::string> > btc = csv_data(csv);
 
 		std::string line;
 		std::vector<std::string>							dates;
 		std::getline(database, line);
 		while (std::getline(database, line))
 		{
-			//2011-10-03 
+			check_line(line);
+			
+						
 		}
 
-		/*// Date Limits
-	if ( month < 0 || month > 12 )	// Months should be in the range from 1 (January) to 12 (December)
-	{
-		cout << endl << "Date of range: Program terminating." << endl;
-		cout << "Reason: Months should be in the range from 1 (January) to 12 (December)." << endl;
-		cout << "Press [ENTER] to finish...";
-		cin.ignore(99,'\n');
-		return 0;
-	}
-	if ( year < 0 ) // Years should be non-negative.
-	{
-		cout << endl << "Input out of range: Program terminating." << endl;
-		cout << "Reason: Years should be non-negative." << endl;
-		cout << "Press [ENTER] to finish...";
-		cin.ignore(99,'\n');
-		return 0;
-	}
-	if ( day < 0 ) // Days also should be non-negative. 
-	{
-		cout << endl << "Date of range: Program terminating." << endl;
-		cout << "Reason: Days should be non-negative." << endl;
-		cout << "Press [ENTER] to finish...";
-		cin.ignore(99,'\n');
-		return 0;
-	}*/
 		// // btc::iterator 
 		// int	i(1);
 		// std::vector<int>::iterator itr;

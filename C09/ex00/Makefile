@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 17:00:39 by mohammoh          #+#    #+#              #
-#    Updated: 2024/10/01 16:10:01 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/10/02 10:11:26 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 run: $(NAME)
-	./$(NAME) data.csv
+	./$(NAME) myDB.txt
 
 clean:
 	$(RM) $(OBJ)
