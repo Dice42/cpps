@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 17:00:39 by mohammoh          #+#    #+#              #
-#    Updated: 2024/10/02 10:11:26 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/10/04 10:41:04 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
+# -fsanitize=address 
 NAME = btc
 
 all: $(NAME)
