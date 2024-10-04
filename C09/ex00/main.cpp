@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 12:45:05 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/10/03 13:06:18 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:12:31 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		BitcoinExchange									btc("data.csv");
-		btc.exchange(av[1]);
+		try{
+			btc.exchange(av[1]);
+		}catch(std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	else
 		std::cout << "Error: could not open file." << std::endl;

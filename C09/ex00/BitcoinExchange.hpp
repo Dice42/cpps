@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:02:15 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/10/04 11:43:32 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:01:49 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <fstream>
 #include <vector>
 #include <cstdlib>
+#include <stdexcept>
 
 #define FEB 2
 #define APR	4
@@ -24,6 +25,8 @@
 #define SEP 9
 #define NOV 11
 
+#define RESET		"\033[0m"
+#define BOLD		"\033[1m"
 
 typedef struct s_data
 {
@@ -42,6 +45,7 @@ class BitcoinExchange
 		t_data						_line;
 		std::vector<t_data>			_database;
 
+		void	_loadData(std::string database);
 		void	_checkLine(void);
 		bool	_checkDate(void);
 		bool 	_isLeapYear(int year);
@@ -53,6 +57,10 @@ class BitcoinExchange
 
 	protected:
 		class CannotOpenFileException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class HeaderNotFoundException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
