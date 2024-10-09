@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:21:23 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/10/04 21:02:57 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:41:52 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ int RPN::evalRPN(const std::string& expression)
             stack.push(token[0] - '0');
         }
     }
-
     if (stack.size() != 1)
         throw InvalidExpressionException();
-
     return stack.top();
 }

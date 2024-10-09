@@ -6,7 +6,7 @@
 /*   By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:02:15 by mohammoh          #+#    #+#             */
-/*   Updated: 2024/10/04 21:01:49 by mohammoh         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:16:12 by mohammoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ class BitcoinExchange
 		BitcoinExchange(const BitcoinExchange& other);
 		BitcoinExchange&	operator=(const BitcoinExchange& rhs);
 	
-
 
 	/*member functions*/
 		void	exchange(std::string data);

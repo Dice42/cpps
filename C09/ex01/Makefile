@@ -6,7 +6,7 @@
 #    By: mohammoh <mohammoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 17:01:09 by mohammoh          #+#    #+#              #
-#    Updated: 2024/09/28 17:01:22 by mohammoh         ###   ########.fr        #
+#    Updated: 2024/10/05 19:37:10 by mohammoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = RPN
+NAME = RPN 
 
 all: $(NAME)
 
@@ -29,7 +29,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 run: $(NAME)
-	./$(NAME) 
+	./$(NAME) "8 9  * 9 - 9 - 9 - 4 - 1 +"
 
 clean:
 	$(RM) $(OBJ)

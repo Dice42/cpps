@@ -76,6 +76,7 @@
 		"list": "cpp",
 		"map": "cpp",
 		"numeric": "cpp",
-		"__memory": "cpp"
+		"__memory": "cpp",
+		"set": "cpp"
 	}
 }
